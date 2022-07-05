@@ -8,10 +8,10 @@ import { flsModules } from "../modules.js";
 import datepicker from 'js-datepicker';
 
 const picker = datepicker('[data-datepicker]', {
-	customDays: ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"],
-	customMonths: ["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"],
-	overlayButton: 'Применить',
-	overlayPlaceholder: 'Год (4 цифры)',
+	customDays: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+	customMonths: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+	overlayButton: 'Apply',
+	overlayPlaceholder: 'Years (4 numbers)',
 	startDay: 1,
 	formatter: (input, date, instance) => {
 		const value = date.toLocaleDateString()

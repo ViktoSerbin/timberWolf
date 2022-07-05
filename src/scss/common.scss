@@ -1,1 +1,17 @@
 // Заголовки, общие БЄМ блоки и проче...
+
+.btn-green {
+    font-weight: 400;
+    font-size: rem(20);
+    line-height: 1;
+    padding: rem(14) rem(12);
+    background-color: $lightGreen;
+    color: #fff;
+    border-radius: rem(28);
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover){
+        &:hover{
+            box-shadow: 0 0 20px rgba($lightGreen, 0.5);
+        }
+    }
+}
