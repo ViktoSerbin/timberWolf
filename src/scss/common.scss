@@ -9,9 +9,24 @@
     color: #fff;
     border-radius: rem(28);
     transition: all 0.3s ease 0s;
-    @media (any-hover: hover){
-        &:hover{
+    @media (any-hover: hover) {
+        &:hover {
             box-shadow: 0 0 20px rgba($lightGreen, 0.5);
         }
     }
+}
+
+.title {
+    font-weight: 700;
+    @include adaptiveValue("font-size", 40, 25);
+    line-height: 1.5;
+    letter-spacing: -0.64px;
+    color: #1d293f;
+}
+
+.text {
+    @include adaptiveValue("font-size", 24, 18);
+    line-height: 1.5;
+    letter-spacing: -0.38px;
+    color: #546179;
 }
