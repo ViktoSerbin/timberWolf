@@ -588,7 +588,7 @@
 							</p>
 						</div>
 						<div class="galleryslider__head-navigation">
-							<button type="button" class="swiper-button-prev">
+							<button type="button" class="swiper-button-prev button-prev">
 								<svg width="12" height="20" viewBox="0 0 12 20" fill="none"
 									xmlns="http://www.w3.org/2000/svg">
 									<path d="M10.461 18.34L1.99805 9.87704L10.461 1.41504" stroke="#546179"
@@ -596,7 +596,7 @@
 										stroke-linejoin="round" />
 								</svg>
 							</button>
-							<button type="button" class="swiper-button-next">
+							<button type="button" class="swiper-button-next button-next">
 								<svg width="11" height="19" viewBox="0 0 11 19" fill="none"
 									xmlns="http://www.w3.org/2000/svg">
 									<path d="M1 17.925L9.463 9.463L1 1" stroke="#546179" stroke-width="2"
@@ -607,8 +607,9 @@
 					</div>
 					<div class="galleryslider__slider swiper">
 						<div class="galleryslider__wrapper swiper-wrapper">
-							<div class="galleryslider__slide swiper-slide galleryslide">
-								<div class="galleryslide__item galleryslide__item-ibg galleryslide__item_1">
+							<div data-gallery class="galleryslider__slide swiper-slide galleryslide">
+								<a href="img/destinations/photo-1.jpg"
+									class="galleryslide__item galleryslide__item-ibg galleryslide__item_1">
 									<div class="galleryslide__rating">
 										4.5
 									</div>
@@ -617,8 +618,9 @@
 									<div class="galleryslide__name">
 										Vietnam
 									</div>
-								</div>
-								<div class="galleryslide__item galleryslide__item-ibg galleryslide__item_big">
+								</a>
+								<a href="img/destinations/photo-2.jpg"
+									class="galleryslide__item galleryslide__item-ibg galleryslide__item_big">
 									<div class="galleryslide__rating">
 										4.7
 									</div>
@@ -627,8 +629,9 @@
 									<div class="galleryslide__name">
 										Greece
 									</div>
-								</div>
-								<div class="galleryslide__item galleryslide__item-ibg galleryslide__item_width">
+								</a>
+								<a href="img/destinations/photo-3.jpg"
+									class="galleryslide__item galleryslide__item-ibg galleryslide__item_width">
 									<div class="galleryslide__rating">
 										4.2
 									</div>
@@ -637,8 +640,9 @@
 									<div class="galleryslide__name">
 										London
 									</div>
-								</div>
-								<div class="galleryslide__item galleryslide__item-ibg galleryslide__item_4">
+								</a>
+								<a href="img/destinations/photo-4.jpg"
+									class="galleryslide__item galleryslide__item-ibg galleryslide__item_4">
 									<div class="galleryslide__rating">
 										4.2
 									</div>
@@ -647,8 +651,9 @@
 									<div class="galleryslide__name">
 										Old Rain
 									</div>
-								</div>
-								<div class="galleryslide__item galleryslide__item-ibg galleryslide__item_mini">
+								</a>
+								<a href="img/destinations/photo-6.jpg"
+									class="galleryslide__item galleryslide__item-ibg galleryslide__item_mini">
 									<div class="galleryslide__rating">
 										4.5
 									</div>
@@ -657,8 +662,9 @@
 									<div class="galleryslide__name">
 										Paris
 									</div>
-								</div>
-								<div class="galleryslide__item galleryslide__item-ibg galleryslide__item_6">
+								</a>
+								<a href="img/destinations/photo-5.jpg"
+									class="galleryslide__item galleryslide__item-ibg galleryslide__item_6">
 									<div class="galleryslide__rating">
 										4.7
 									</div>
@@ -666,75 +672,208 @@
 										alt="destination">
 									<div class="galleryslide__name">
 										Amsterdam
+									</div>
+								</a>
+							</div>
+							<div data-gallery class="galleryslider__slide swiper-slide galleryslide">
+								<a href="img/destinations/photo-4.jpg"
+									class="galleryslide__item galleryslide__item-ibg galleryslide__item_4">
+									<div class="galleryslide__rating">
+										4.2
+									</div>
+									<img class="galleryslide__img" src="@img/destinations/photo-4.jpg"
+										alt="destination">
+									<div class="galleryslide__name">
+										Old Rain
+									</div>
+								</a>
+								<a href="img/destinations/photo-6.jpg"
+									class="galleryslide__item galleryslide__item-ibg galleryslide__item_mini">
+									<div class="galleryslide__rating">
+										4.5
+									</div>
+									<img class="galleryslide__img" src="@img/destinations/photo-6.jpg"
+										alt="destination">
+									<div class="galleryslide__name">
+										Paris
+									</div>
+								</a>
+								<a href="img/destinations/photo-5.jpg"
+									class="galleryslide__item galleryslide__item-ibg galleryslide__item_6">
+									<div class="galleryslide__rating">
+										4.7
+									</div>
+									<img class="galleryslide__img" src="@img/destinations/photo-5.jpg"
+										alt="destination">
+									<div class="galleryslide__name">
+										Amsterdam
+									</div>
+								</a>
+								<a href="img/destinations/photo-1.jpg"
+									class="galleryslide__item galleryslide__item-ibg galleryslide__item_1">
+									<div class="galleryslide__rating">
+										4.5
+									</div>
+									<img class="galleryslide__img" src="@img/destinations/photo-1.jpg"
+										alt="destination">
+									<div class="galleryslide__name">
+										Vietnam
+									</div>
+								</a>
+								<a href="img/destinations/photo-2.jpg"
+									class="galleryslide__item galleryslide__item-ibg galleryslide__item_width">
+									<div class="galleryslide__rating">
+										4.7
+									</div>
+									<img class="galleryslide__img" src="@img/destinations/photo-2.jpg"
+										alt="destination">
+									<div class="galleryslide__name">
+										Greece
+									</div>
+								</a>
+								<a href="img/destinations/photo-3.jpg"
+									class="galleryslide__item galleryslide__item-ibg galleryslide__item_big">
+									<div class="galleryslide__rating">
+										4.2
+									</div>
+									<img class="galleryslide__img" src="@img/destinations/photo-3.jpg"
+										alt="destination">
+									<div class="galleryslide__name">
+										London
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="guides">
+				<div class="guides__container">
+					<div class="guides__head">
+						<div class="guides__head-info">
+							<h3 class="guides__title title">
+								Tour Guides
+							</h3>
+							<p class="guides__text text">
+								Sost Brilliant reasons Entrada should be your one-stop-shop!
+							</p>
+						</div>
+						<div class="guides__head-navigation">
+							<button type="button" class="swiper-button-prev button-prev">
+								<svg width="12" height="20" viewBox="0 0 12 20" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path d="M10.461 18.34L1.99805 9.87704L10.461 1.41504" stroke="#546179"
+										stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+							</button>
+							<button type="button" class="swiper-button-next button-next">
+								<svg width="11" height="19" viewBox="0 0 11 19" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path d="M1 17.925L9.463 9.463L1 1" stroke="#546179" stroke-width="2"
+										stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="guides__guru">
+					<div class="guides__slider swiper">
+						<div class="guides__wrapper swiper-wrapper">
+							<div class="guides__slide swiper-slide">
+								<div class="guides__slide-img guides__slide-ibg">
+									<img src="@img/guides/photo-1.jpg" alt="guides">
+									<div class="guides__slide-number">01</div>
+								</div>
+								<div class="guides__slide-info">
+									<h5 class="guides__slide-subtitle">
+										Adventure Guru
+									</h5>
+									<h3 class="guides__slide-title">
+										Martina <br> James Junior
+									</h3>
+									<div class="guides__slide-about about-slide">
+										<div class="about-slide__item">
+											<div class="about-slide__title">
+												About
+											</div>
+											<p class="about-slide__text">
+												Check Out Daily Deals and Promotion on
+												hotels. Easy & Fast Booking.
+											</p>
+										</div>
+										<div class="about-slide__item">
+											<div class="about-slide__title">
+												Journey
+											</div>
+											<p class="about-slide__text">
+												Check Out Daily Deals and Promotion on
+												hotels. Easy & Fast Booking.
+											</p>
+										</div>
+									</div>
+									<div class="guides__slide-socials socials-slide">
+										<a href="" class="socials-slide__link">
+											Facebook
+										</a>
+										<a href="" class="socials-slide__link">
+											Instagram
+										</a>
+										<a href="" class="socials-slide__link">
+											Twitter
+										</a>
 									</div>
 								</div>
 							</div>
-							<div class="galleryslider__slide swiper-slide galleryslide">
-								<div class="galleryslide__item galleryslide__item-ibg galleryslide__item_4">
-									<div class="galleryslide__rating">
-										4.2
-									</div>
-									<img class="galleryslide__img" src="@img/destinations/photo-4.jpg"
-										alt="destination">
-									<div class="galleryslide__name">
-										Old Rain
-									</div>
+							<div class="guides__slide swiper-slide">
+								<div class="guides__slide-img guides__slide-ibg">
+									<img src="@img/guides/photo-2.jpg" alt="guides">
+									<div class="guides__slide-number">02</div>
 								</div>
-								<div class="galleryslide__item galleryslide__item-ibg galleryslide__item_mini">
-									<div class="galleryslide__rating">
-										4.5
+								<div class="guides__slide-info">
+									<h5 class="guides__slide-subtitle">
+										Adventure Guru
+									</h5>
+									<h3 class="guides__slide-title">
+										Martina <br> James Junior
+									</h3>
+									<div class="guides__slide-about about-slide">
+										<div class="about-slide__item">
+											<div class="about-slide__title">
+												About
+											</div>
+											<p class="about-slide__text">
+												Check Out Daily Deals and Promotion on
+												hotels. Easy & Fast Booking.
+											</p>
+										</div>
+										<div class="about-slide__item">
+											<div class="about-slide__title">
+												Journey
+											</div>
+											<p class="about-slide__text">
+												Check Out Daily Deals and Promotion on
+												hotels. Easy & Fast Booking.
+											</p>
+										</div>
 									</div>
-									<img class="galleryslide__img" src="@img/destinations/photo-6.jpg"
-										alt="destination">
-									<div class="galleryslide__name">
-										Paris
-									</div>
-								</div>
-								<div class="galleryslide__item galleryslide__item-ibg galleryslide__item_6">
-									<div class="galleryslide__rating">
-										4.7
-									</div>
-									<img class="galleryslide__img" src="@img/destinations/photo-5.jpg"
-										alt="destination">
-									<div class="galleryslide__name">
-										Amsterdam
-									</div>
-								</div>
-								<div class="galleryslide__item galleryslide__item-ibg galleryslide__item_1">
-									<div class="galleryslide__rating">
-										4.5
-									</div>
-									<img class="galleryslide__img" src="@img/destinations/photo-1.jpg"
-										alt="destination">
-									<div class="galleryslide__name">
-										Vietnam
-									</div>
-								</div>
-								<div class="galleryslide__item galleryslide__item-ibg galleryslide__item_width">
-									<div class="galleryslide__rating">
-										4.7
-									</div>
-									<img class="galleryslide__img" src="@img/destinations/photo-2.jpg"
-										alt="destination">
-									<div class="galleryslide__name">
-										Greece
-									</div>
-								</div>
-								<div class="galleryslide__item galleryslide__item-ibg galleryslide__item_big">
-									<div class="galleryslide__rating">
-										4.2
-									</div>
-									<img class="galleryslide__img" src="@img/destinations/photo-3.jpg"
-										alt="destination">
-									<div class="galleryslide__name">
-										London
+									<div class="guides__slide-socials socials-slide">
+										<a href="" class="socials-slide__link">
+											Facebook
+										</a>
+										<a href="" class="socials-slide__link">
+											Instagram
+										</a>
+										<a href="" class="socials-slide__link">
+											Twitter
+										</a>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
 		</main>
 		@@include('html/_footer.htm',{})
 	</div>
