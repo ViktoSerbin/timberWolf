@@ -114,7 +114,7 @@ function initSliders() {
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,
-			spaceBetween: 0,
+			spaceBetween: 15,
 			autoHeight: true,
 			speed: 1000,
 			effect: 'fade',
@@ -258,33 +258,33 @@ function initSliders() {
 
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
-function initSlidersScroll() {
-	let sliderScrollItems = document.querySelectorAll('.swiper_scroll');
-	if (sliderScrollItems.length > 0) {
-		for (let index = 0; index < sliderScrollItems.length; index++) {
-			const sliderScrollItem = sliderScrollItems[index];
-			const sliderScrollBar = sliderScrollItem.querySelector('.swiper-scrollbar');
-			const sliderScroll = new Swiper(sliderScrollItem, {
-				observer: true,
-				observeParents: true,
-				direction: 'vertical',
-				slidesPerView: 'auto',
-				freeMode: {
-					enabled: true,
-				},
-				scrollbar: {
-					el: sliderScrollBar,
-					draggable: true,
-					snapOnRelease: false
-				},
-				mousewheel: {
-					releaseOnEdges: true,
-				},
-			});
-			sliderScroll.scrollbar.updateSize();
-		}
-	}
-}
+// function initSlidersScroll() {
+// 	let sliderScrollItems = document.querySelectorAll('.swiper_scroll');
+// 	if (sliderScrollItems.length > 0) {
+// 		for (let index = 0; index < sliderScrollItems.length; index++) {
+// 			const sliderScrollItem = sliderScrollItems[index];
+// 			const sliderScrollBar = sliderScrollItem.querySelector('.swiper-scrollbar');
+// 			const sliderScroll = new Swiper(sliderScrollItem, {
+// 				observer: true,
+// 				observeParents: true,
+// 				direction: 'vertical',
+// 				slidesPerView: 'auto',
+// 				freeMode: {
+// 					enabled: true,
+// 				},
+// 				scrollbar: {
+// 					el: sliderScrollBar,
+// 					draggable: true,
+// 					snapOnRelease: false
+// 				},
+// 				mousewheel: {
+// 					releaseOnEdges: true,
+// 				},
+// 			});
+// 			sliderScroll.scrollbar.updateSize();
+// 		}
+// 	}
+// }
 
 window.addEventListener("load", function (e) {
 	// Запуск инициализации слайдеров

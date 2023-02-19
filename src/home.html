@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 @@include('html/_head.htm',{
 "title":"Главная"
 })
@@ -121,11 +121,11 @@
 					<div class="search__body body-search">
 						<div class="body-search__column body-search__column--location">
 							<h4 class="body-search__title">
-								<div class="body-search__title-decore">
-									<div class="body-search__title-text">
+								<span class="body-search__title-decore">
+									<span class="body-search__title-text">
 										Location
-									</div>
-								</div>
+									</span>
+								</span>
 							</h4>
 							<select name="form[]" data-class-modif="form" data-search class="body-search__select">
 								<option value="1" selected>Enter your destination</option>
@@ -136,11 +136,11 @@
 						</div>
 						<div class="body-search__column body-search__column--activivty">
 							<h4 class="body-search__title">
-								<div class="body-search__title-decore">
-									<div class="body-search__title-text">
+								<span class="body-search__title-decore">
+									<span class="body-search__title-text">
 										Activity
-									</div>
-								</div>
+									</span>
+								</span>
 							</h4>
 							<select name="form[]" data-class-modif="form" class="body-search__select">
 								<option value="1" selected>Tours & Trips</option>
@@ -151,11 +151,11 @@
 						</div>
 						<div class="body-search__column">
 							<h4 class="body-search__title">
-								<div class="body-search__title-decore">
-									<div class="body-search__title-text">
+								<span class="body-search__title-decore">
+									<span class="body-search__title-text">
 										Date
-									</div>
-								</div>
+									</span>
+								</span>
 							</h4>
 							<div class="body-search__calendar">
 								<input data-datepicker type="text" name="date" value="Set date">
@@ -747,7 +747,7 @@
 					</div>
 				</div>
 			</section>
-			<div class="guides">
+			<section class="guides">
 				<div class="guides__container">
 					<div class="guides__head">
 						<div class="guides__head-info">
@@ -873,7 +873,58 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</section>
+			<section class="experiance">
+				<div class="experiance__container">
+					<div class="experiance__body">
+						<h3 class="experiance__title">
+							Tour the World from Your Couch with #ExperienceLive!
+						</h3>
+						<div class="experiance__text">
+							To kickstart your digital adventures with Entrada
+						</div>
+						<a href="#" class="experiance__link">Check All</a>
+					</div>
+				</div>
+			</section>
+			<section class="subscribe">
+				<div class="subscribe__container">
+					<div class="subscribe__body">
+						<div class="subscribe__leftblock">
+							<div class="subscribe__leftblock-ibg">
+								<img src="@img/subscribe/01.jpg" alt="photographer">
+							</div>
+							<div class="subscribe__leftblock-ibg">
+								<img src="@img/subscribe/02.jpg" alt="photographer">
+							</div>
+							<div class="subscribe__leftblock-ibg">
+								<img src="@img/subscribe/03.jpg" alt="couple in the mountains">
+							</div>
+						</div>
+						<div class="subscribe__rightblock">
+							<h3 class="subscribe__title">
+								Subscribe For Offers
+							</h3>
+							<div class="subscribe__subtitle">
+								Adventures Calling
+								You Guys!
+							</div>
+							<p class="subscribe__text">
+								The Brilliant reasons Entrada should be
+								your one-stop-shop!
+							</p>
+							<form action="#" class="subscribe__form">
+								<input type="text" name="form[email]" data-required="email" data-validate="email" data-error="Incorrect E-mail entered" placeholder="Enter your email"
+									class="input subscribe__input">
+								<button type="submit" class="subscribe__btn">Send Now!</button>
+							</form>
+							<div class="subscribe__reply">
+								Expect a reply in 2-3 working days
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 		</main>
 		@@include('html/_footer.htm',{})
 	</div>
