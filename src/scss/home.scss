@@ -955,7 +955,7 @@
     &__body {
         display: flex;
         gap: rem(32);
-        @media (max-width:$tablet){
+        @media (max-width: $tablet) {
             flex-wrap: wrap;
         }
     }
@@ -973,11 +973,11 @@
         :nth-child(1) {
             grid-row: span 2;
         }
-        @media (max-width: em(1400)){
+        @media (max-width: em(1400)) {
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(2, 1fr);
         }
-        @media (max-width:$tablet){
+        @media (max-width: $tablet) {
             background: none;
             margin: 0;
             padding: 0;
@@ -985,7 +985,7 @@
     }
     // .subscribe__leftblock-ibg
     &__leftblock-ibg {
-        padding-bottom: percent(296,376);
+        padding-bottom: percent(296, 376);
         border-radius: rem(8);
         img {
             border-radius: rem(8);
@@ -1029,7 +1029,7 @@
         &:not(:last-child) {
             margin-bottom: rem(72);
         }
-        @media (max-width: em(500)){
+        @media (max-width: em(500)) {
             &:not(:last-child) {
                 margin-bottom: rem(42);
             }
@@ -1051,7 +1051,7 @@
             color: red;
             font-size: rem(18);
         }
-        @media (max-width: em(500)){
+        @media (max-width: em(500)) {
             flex-wrap: wrap;
             gap: rem(24);
             box-shadow: none;
@@ -1064,12 +1064,12 @@
         font-weight: 400;
         font-size: rem(18);
         color: #99a3ad;
-        background: url('@img/icons/mail.svg') 5% 50% no-repeat;
+        background: url("@img/icons/mail.svg") 5% 50% no-repeat;
         &::placeholder {
             font-size: rem(18);
             color: #99a3ad;
         }
-        @media (max-width: em(500)){
+        @media (max-width: em(500)) {
             box-shadow: 0px 32px 84px rgba(14, 86, 124, 0.16);
         }
     }
@@ -1083,7 +1083,13 @@
         color: #fff;
         background-color: $lightGreen;
         padding: rem(26) rem(20);
-        @media (max-width: em(500)){
+        transition: background 0.3s ease 0s;
+        @media (any-hover: hover){
+            &:hover{
+                background-color: #218881;
+            }
+        }
+        @media (max-width: em(500)) {
             box-shadow: 0px 32px 84px rgba(14, 86, 124, 0.16);
         }
     }
@@ -1099,9 +1105,125 @@
     }
 }
 
+//=== questions ==========================================================================================
+
+.questions {
+    @include adaptiveValue("margin-bottom", 120, 50);
+    // .questions__container
+    &__container {
+    }
+    // .questions__title
+    &__title {
+        text-align: center;
+        color: $mainColor;
+    }
+    // .questions__subtitle
+    &__subtitle {
+        @include adaptiveValue("font-size", 24, 18);
+        line-height: 1.5;
+        letter-spacing: -0.38px;
+        text-align: center;
+        color: $textColor;
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 72, 40);
+        }
+    }
+    // .questions__body
+    &__body {
+        display: flex;
+        gap: rem(32);
+        @include adaptiveValue("padding-left", 136, 0, 1920, 991.98);
+        @include adaptiveValue("padding-right", 136, 0, 1920, 991.98);
+        background: url('@img/question-dots-bg.svg') 70px 40px no-repeat;
+        @media (max-width:$tablet){
+            background: none;
+        }
+        @media (max-width:$mobile){
+            padding: 0;
+            flex-wrap: wrap;
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+    }
+    // .questions__item
+    &__item {
+        text-align: center;
+        color: #fff;
+        width: 100%;
+        padding: rem(72) rem(15) rem(56);
+        border-radius: rem(12);
+        background-color: $titleColor;
+        &--green {
+            background-color: $lightGreen;
+        }
+        &--blue {
+            background-color: $titleColor;
+        }
+        @media (max-width:$mobile){
+            border-radius: 0;
+            padding: rem(45) rem(10) rem(30);
+        }
+    }
+    // .questions__img
+    &__img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto rem(56) auto;
+        background-color: #fff;
+        border-radius: 50%;
+        width: rem(104);
+        height: rem(104);
+        @media (max-width:$mobile){
+            margin-bottom: rem(30);
+        }
+    }
+    // .questions__help
+    &__help {
+        font-weight: 500;
+        @include adaptiveValue("font-size", 32, 24);
+        line-height: 1.5;
+        letter-spacing: -0.51px;
+        &:not(:last-child) {
+            margin-bottom: rem(24);
+        }
+    }
+    // .questions__text
+    &__text {
+        max-width: rem(366);
+        margin: 0 auto;
+        @include adaptiveValue("font-size", 24, 18);
+        line-height: 1.5;
+        text-align: center;
+        letter-spacing: -0.38px;
+        color: #bcf0ec;
+        &:not(:last-child) {
+            margin-bottom: rem(48);
+        }
+        @media (max-width:$mobile){
+            &:not(:last-child) {
+                margin-bottom: rem(30);
+            }
+        }
+    }
+    // .questions__email
+    &__email {
+        display: block;
+        font-weight: 500;
+        font-size: rem(24);
+        line-height: 1.5;
+        letter-spacing: -0.38px;
+    }
+    // .questions__phone
+    &__phone {
+        display: block;
+        font-weight: 500;
+        font-size: rem(24);
+        line-height: 1.5;
+        letter-spacing: -0.38px;
+    }
+}
+
 //====================================================================================================
 
-
-
-//====================================================================================================
 
