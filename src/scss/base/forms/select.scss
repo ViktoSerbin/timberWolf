@@ -190,7 +190,7 @@
         }
         // .select__options
         &__options {
-            color: #1D293F;
+            color: #1d293f;
             position: absolute;
             top: 29px;
             min-width: 100%;
@@ -223,14 +223,14 @@
             cursor: pointer;
             padding: 5px 10px;
             color: inherit;
-			border-radius: 10px;
+            border-radius: 10px;
             &._select-selected {
                 background-color: #eee;
             }
             @media (any-hover: hover) {
                 &:hover {
                     background: $lightGreen;
-					color: #fff;
+                    color: #fff;
                 }
             }
         }
@@ -270,6 +270,130 @@
                 height: rem(21);
                 background-image: url("@img/icons/marker.svg");
             }
+        }
+    }
+}
+
+.sortby {
+    .select {
+        position: relative;
+        width: 100%;
+        // .select__body
+        &__body {
+            position: relative;
+        }
+        // .select__title
+        &__title {
+            min-width: rem(150);
+            color: #212529;
+            font-weight: 600;
+            font-size: rem(18);
+            line-height: 1.1;
+            text-align: left;
+            white-space: nowrap;
+            border: none;
+            background-color: #fff;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 0;
+        }
+        // .select__value
+        &__value {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: rem(30);
+            padding: 0;
+            gap: rem(25);
+            > * {
+                flex: 1 1 auto;
+            }
+            &:after {
+                content: "";
+                align-self: stretch;
+                flex: 0 0 14px;
+                width: 14px;
+                transition: all 0.3s ease 0s;
+                background: url('@img/icons/arrow-select-2.svg') center no-repeat;
+                ._select-open & {
+                    transform: rotate(-180deg);
+                }
+            }
+            &._select-pseudo-label {
+                &::before {
+                    content: attr(data-pseudo-label);
+                    opacity: 0.5;
+                }
+            }
+        }
+        // .select__text
+        &__text {
+            flex: 1 1 auto;
+        }
+        &__input {
+            width: 100%;
+            background-color: transparent;
+            height: 100%;
+        }
+        // .select__options
+        &__options {
+            color: #1d293f;
+            position: absolute;
+            top: 29px;
+            min-width: 100%;
+            left: 0;
+            background-color: #fff;
+            border: 1px solid #e9ecef;
+            padding: 10px 5px 10px 5px;
+            box-shadow: 0px 43px 66px rgba(0, 0, 0, 0.07);
+            border-radius: 16px;
+        }
+        // .select__scroll
+        &__scroll {
+            overflow-y: auto;
+            overflow-x: hidden;
+            // Максимальная высота
+            max-height: 200px;
+            // Стили скроллбара
+            .simplebar-scrollbar {
+                &::before {
+                    //opacity: 1;
+                }
+            }
+        }
+        // .select__option
+        &__option {
+            width: 100%;
+            text-align: left;
+            white-space: nowrap;
+            cursor: pointer;
+            padding: 5px 10px;
+            color: inherit;
+            border-radius: 10px;
+            &._select-selected {
+                background-color: #eee;
+            }
+            @media (any-hover: hover) {
+                &:hover {
+                    background: $lightGreen;
+                    color: #fff;
+                }
+            }
+        }
+
+        // Конструкция дополнительных данных
+        &__row {
+            display: inline-flex;
+            align-items: center;
+        }
+        &__asset {
+        }
+        &__text {
+        }
+
+        // Состояния селекта
+        &._select-open {
+            z-index: 10;
         }
     }
 }

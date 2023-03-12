@@ -10,3 +10,15 @@ document.body.addEventListener("click", function (e) {
         targetElement.classList.toggle('_active');
     }
 });
+
+function menuFilter() {
+	if (document.querySelector(".filter-btn")) {
+		document.addEventListener("click", function (e) {
+			if (e.target.closest('.filter-btn')) {
+				document.documentElement.classList.toggle("filter-open");
+			}
+		});
+	};
+}
+
+menuFilter();
