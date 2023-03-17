@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Tours Detail"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{
+		"search": ""
+		})
+		<main class="page-tour">
+			<section class="tour-detail">
+				<div class="tour-detail__container">
+					<div class="tour-detail__sliders">
+						<div thumbsSlider class="tour-thumbs__slider swiper">
+							<div class="tour-thumbs__wrapper swiper-wrapper">
+								<div class="tour-thumbs__slide swiper-slide tour-thumbs__slide-ibg">
+									<img src="@img/tourspage/photo-1.jpg" alt="photo-1">
+								</div>
+								<div
+									class="tour-thumbs__slide swiper-slide tour-thumbs__slide-ibg tour-thumbs__slide-video">
+									<img src="@img/tourspage/photo-2.jpg" alt="photo-2">
+								</div>
+								<div class="tour-thumbs__slide swiper-slide tour-thumbs__slide-ibg">
+									<img src="@img/tourspage/photo-3.jpg" alt="photo-3">
+								</div>
+								<div class="tour-thumbs__slide swiper-slide tour-thumbs__slide-ibg">
+									<img src="@img/tourspage/photo-4.jpg" alt="photo-4">
+								</div>
+								<div class="tour-thumbs__slide swiper-slide tour-thumbs__slide-ibg">
+									<img src="@img/tourspage/photo-5.jpg" alt="photo-5">
+								</div>
+								<div class="tour-thumbs__slide swiper-slide tour-thumbs__slide-ibg">
+									<img src="@img/tourspage/photo-6.jpg" alt="photo-6">
+								</div>
+							</div>
+						</div>
+						<div class="tour-detail__slider swiper">
+							<div class="tour-detail__wrapper swiper-wrapper">
+								<div class="tour-detail__slide swiper-slide tour-detail__slide-ibg">
+									<img src="@img/tourspage/photo-1.jpg" alt="photo-1">
+								</div>
+								<div class="tour-detail__slide swiper-slide tour-detail__slide-video">
+									<video controls poster="@img/tourspage/photo-2.jpg">
+										<source type="video/mp4" src="@img/tours/videos.mp4">
+									</video>
+								</div>
+								<div class="tour-detail__slide swiper-slide tour-detail__slide-ibg">
+									<img src="@img/tourspage/photo-3.jpg" alt="photo-3">
+								</div>
+								<div class="tour-detail__slide swiper-slide tour-detail__slide-ibg">
+									<img src="@img/tourspage/photo-4.jpg" alt="photo-4">
+								</div>
+								<div class="tour-detail__slide swiper-slide tour-detail__slide-ibg">
+									<img src="@img/tourspage/photo-5.jpg" alt="photo-5">
+								</div>
+								<div class="tour-detail__slide swiper-slide tour-detail__slide-ibg">
+									<img src="@img/tourspage/photo-6.jpg" alt="photo-6">
+								</div>
+							</div>
+							<div class="tour-detail__navigation">
+								<button type="button" class="swiper-button-prev button-prev">
+									<svg width="12" height="20" viewBox="0 0 12 20" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path d="M10.461 18.34L1.99805 9.87704L10.461 1.41504" stroke="#ffffff"
+											stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+											stroke-linejoin="round" />
+									</svg>
+								</button>
+								<button type="button" class="swiper-button-next button-next">
+									<svg width="11" height="19" viewBox="0 0 11 19" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path d="M1 17.925L9.463 9.463L1 1" stroke="#ffffff" stroke-width="2"
+											stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</button>
+							</div>
+							<div class="tour-detail__pagin-block">
+								<svg width="18" height="14" viewBox="0 0 18 14" fill="none">
+									<path
+										d="M1.2 0C0.54218 0 0 0.558127 0 1.23529V12.7647C0 13.4419 0.54218 14 1.2 14H16.8C17.4578 14 18 13.4419 18 12.7647V1.23529C18 0.558127 17.4578 0 16.8 0H1.2ZM1.2 0.823529H16.8C17.0281 0.823529 17.2 1.00046 17.2 1.23529V11.0789L13.6938 7.12847C13.6133 7.04001 13.493 6.99175 13.375 6.99979C13.2743 7.00542 13.1758 7.05287 13.1063 7.12847L10.2439 10.2554L6.10008 5.488C6.0118 5.38425 5.8704 5.33117 5.73758 5.35289C5.6493 5.36737 5.56649 5.41401 5.50634 5.48157L0.80014 10.6865V1.23524C0.80014 1.00041 0.972016 0.823478 1.20014 0.823478L1.2 0.823529ZM10.4 2.88235C9.5211 2.88235 8.8 3.62466 8.8 4.52941C8.8 5.43416 9.5211 6.17647 10.4 6.17647C11.2789 6.17647 12 5.43416 12 4.52941C12 3.62466 11.2789 2.88235 10.4 2.88235ZM10.4 3.70588C10.8469 3.70588 11.2 4.06939 11.2 4.52941C11.2 4.98944 10.8469 5.35294 10.4 5.35294C9.95312 5.35294 9.6 4.98944 9.6 4.52941C9.6 4.06939 9.95312 3.70588 10.4 3.70588ZM5.7938 6.37597L11.7062 13.1765H1.2C0.97188 13.1765 0.8 12.9995 0.8 12.7647V11.8961L5.7938 6.37597ZM13.3938 8.01661L17.2 12.3014V12.7647C17.2 12.9995 17.0281 13.1764 16.8 13.1764H12.7812L10.7812 10.873L13.3938 8.01661Z"
+										fill="#212529" />
+								</svg>
+								<div class="swiper-pagination"></div>
+							</div>
+						</div>
+					</div>
+					<div class="tour-detail__body">
+						<div class="tour-detail__content detail-tour">
+							<div class="detail-tour__header">
+								<div class="detail-tour__destination">
+									Destination > Portugal > Laos
+								</div>
+								<h1 class="detail-tour__title">
+									Sandy beach holiday in Lagos
+									<button type="button" class="detail-tour__share">
+										<svg width="18" height="25" viewBox="0 0 18 25" fill="none">
+											<path
+												d="M15.9048 8.01489H11.7778V8.98832H15.9048C16.5079 8.98832 17.0159 9.50749 17.0159 10.124V22.8436C17.0159 23.4601 16.5079 23.9793 15.9048 23.9793H2.06349C1.46032 23.9793 0.952381 23.4601 0.952381 22.8436V10.124C0.952381 9.50749 1.46032 8.98832 2.06349 8.98832H5.87302V8.01489H2.06349C0.920635 8.01489 0 8.95588 0 10.124V22.8436C0 24.0117 0.920635 24.9527 2.06349 24.9527H15.9365C17.0794 24.9527 18 24.0117 18 22.8436V10.124C17.9683 8.95588 17.0476 8.01489 15.9048 8.01489ZM8.50794 2.72587V16.4838H9.46032V2.72587L11.5556 4.86744L12.2222 4.18603L8.98413 0.876343L5.71429 4.18603L6.38095 4.86744L8.50794 2.72587Z"
+												fill="#546179" />
+										</svg>
+									</button>
+									<button type="button" class="detail-tour__wishlist">
+										<svg width="28" height="25" viewBox="0 0 28 25" fill="none">
+											<path
+												d="M20.7022 0.876343C19.8086 0.876343 17.1581 0.876342 14.0001 4.91939C12.8679 3.43319 10.5441 0.876343 7.2979 0.876343C3.27661 0.876343 0 4.14597 0 8.15869C0 9.10962 0.179189 10.0315 0.536411 10.9233C1.19149 12.5279 4.82519 16.1249 9.47262 20.6427C11.2599 22.3669 12.7796 23.882 13.5532 24.7449C13.6719 24.8633 13.8208 24.9527 14 24.9527C14.1792 24.9527 14.3281 24.8935 14.4468 24.7449C15.2218 23.8833 16.7705 22.367 18.5274 20.6427C23.1748 16.1249 26.7782 12.5277 27.4636 10.8929C27.8208 10.0314 28 9.0793 28 8.12838C28 4.14597 24.7234 0.876343 20.7021 0.876343H20.7022ZM26.3618 10.4471C25.7358 11.9635 21.0897 16.4814 17.7235 19.7798C16.2038 21.2358 14.8937 22.5444 14.0304 23.465C13.1671 22.5431 11.8267 21.2659 10.3374 19.7798C6.94224 16.4799 2.29482 11.9622 1.69907 10.4471C1.3407 9.73424 1.19176 8.96094 1.19176 8.15864C1.19176 4.79954 3.93196 2.06524 7.29817 2.06524C10.1582 2.06524 12.2131 4.47335 13.5231 6.28573C13.6418 6.43435 13.821 6.52376 14.0002 6.52376C14.1794 6.52376 14.3877 6.43435 14.4773 6.28573C15.7584 4.4721 17.8132 2.06524 20.7022 2.06524C24.0685 2.06524 26.8087 4.7996 26.8087 8.15864C26.8087 8.96094 26.6597 9.73424 26.3618 10.4471H26.3618Z"
+												fill="#546179" />
+										</svg>
+									</button>
+								</h1>
+								<div class="detail-tour__rating-block detail-rating">
+									<div class="detail-rating__stars">
+										<img src="@img/icons/star-big-yellow.svg" alt="rating five star">
+										<img src="@img/icons/star-big-yellow.svg" alt="">
+										<img src="@img/icons/star-big-yellow.svg" alt="">
+										<img src="@img/icons/star-big-yellow.svg" alt="">
+										<img src="@img/icons/star-big-yellow.svg" alt="">
+									</div>
+									<div class="detail-rating__text">
+										<span>6,788</span> Reviews
+									</div>
+								</div>
+							</div>
+							<div data-tabs class="detail-tour__tabs tabs">
+								<nav data-tabs-titles class="tabs__navigation">
+									<button type="button" class="tabs__title _tab-active">Overview</button>
+									<button type="button" class="tabs__title">Itinerary</button>
+									<button type="button" class="tabs__title">Inclusions</button>
+									<button type="button" class="tabs__title">Reviews</button>
+									<button type="button" class="tabs__title">FAQ</button>
+								</nav>
+								<div data-tabs-body class="tabs__content">
+									<div class="tabs__body">
+										<div class="detail-tabs">
+											<img class="detail-tabs__icon" src="@img/icons/icon-overviews.svg"
+												alt="icon-overviews">
+											<div class="detail-tabs__body">
+												<div data-showmore class="detail-tabs__text-block">
+													<p data-showmore-content="96" class="detail-tabs__text">Dolor elit
+														voluptate cupidatat in eiusmod. Eiusmod ex eu incididunt etile
+														pariatur dolor mollit reprehenderit magna tempor ex minim velit
+														sunt do. Elit dolore sunt cupidatat minim nisi nulla fugiat sit
+														dolor adipisicing excepteur eiusmod. Mollit reprehenderit magna
+														tempor ex.Dolor elit voluptate cupidatat in eiusmod. Eiusmod ex
+														eu incididunt etile pariatur dolor mollit reprehenderit magna
+														tempor ex minim velit sunt do. Elit dolore sunt cupidatat minim
+														nisi nulla fugiat sit dolor adipisicing excepteur eiusmod.
+														Mollit reprehenderit magna tempor ex.</p>
+													<button hidden data-showmore-button type="button"
+														class="block__more"><span>Show
+															More...</span><span>Hide</span></button>
+												</div>
+												<div class="detail-tabs__items">
+													<div class="detail-tabs__item detail-item">
+														<h4 class="detail-item__title">
+															Duration
+														</h4>
+														<div class="detail-item__body">
+															<img src="@img/icons/icon-time.svg" alt="icon-time">
+															<div class="detail-item__text">
+																2 Days
+															</div>
+														</div>
+													</div>
+													<div class="detail-tabs__item detail-item">
+														<h4 class="detail-item__title">
+															Activity
+														</h4>
+														<div class="detail-item__body">
+															<img src="@img/icons/icon-people.svg" alt="icon-people">
+															<div class="detail-item__text">
+																Walking
+															</div>
+														</div>
+													</div>
+													<div class="detail-tabs__item detail-item">
+														<h4 class="detail-item__title">
+															Physical
+														</h4>
+														<div class="detail-item__body">
+															<img src="@img/icons/icon-physical.svg" alt="icon-physical">
+															<div class="detail-item__text">
+																Strenuous
+															</div>
+														</div>
+													</div>
+													<div class="detail-tabs__item detail-item">
+														<h4 class="detail-item__title">
+															Group Size
+														</h4>
+														<div class="detail-item__body">
+															<img src="@img/icons/icon-group.svg" alt="icon-group">
+															<div class="detail-item__text">
+																8
+															</div>
+														</div>
+													</div>
+													<div class="detail-tabs__item detail-item">
+														<h4 class="detail-item__title">
+															Age
+														</h4>
+														<div class="detail-item__body">
+															<img src="@img/icons/icon-cake.svg" alt="icon-cake">
+															<div class="detail-item__text">
+																7+
+															</div>
+														</div>
+													</div>
+													<div class="detail-tabs__item detail-item">
+														<h4 class="detail-item__title">
+															Season
+														</h4>
+														<div class="detail-item__body">
+															<img src="@img/icons/icon-season.svg" alt="icon-season">
+															<div class="detail-item__text">
+																Apr-Sep
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="tabs__body">
+										<div class="detail-tabs">
+											<img class="detail-tabs__icon" src="@img/icons/icon-itinerary.svg"
+												alt="icon-itinerary">
+											<div class="detail-tabs__body">
+												<div data-spollers class="detail-spollers">
+													<div class="detail-spollers__item">
+														<button type="button" data-spoller
+															class="detail-spollers__title _spoller-active">
+															<span>1</span> Day 1
+														</button>
+														<div class="detail-spollers__body">
+															<h4 class="detail-spollers__subtitle">
+																Lake Nakuru National Park
+															</h4>
+															<p class="detail-spollers__text">
+																Dolor elit voluptate cupidatat in eiusmod. Eiusmod ex eu
+																incididunt etile pariatur dolor mollit reprehenderit
+																magna tempor ex minim velit sunt do.
+															</p>
+															<div class="detail-spollers__block">
+																<img class="detail-spollers__img"
+																	src="@img/tourspage/photo-1.jpg" alt="photo-1">
+																<a href="" class="detail-spollers__link-map">
+																	View on Map
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div data-spollers class="detail-spollers">
+													<div class="detail-spollers__item">
+														<button type="button" data-spoller
+															class="detail-spollers__title">
+															<span>2</span> Day 2
+														</button>
+														<div class="detail-spollers__body">
+															<div data-tabs class="tabs detail-spollers__tabs">
+																<nav data-tabs-titles class="tabs__navigation">
+																	<button type="button"
+																		class="tabs__title _tab-active">Accommodation</button>
+																	<button type="button"
+																		class="tabs__title">Meals</button>
+																	<button type="button"
+																		class="tabs__title">Inclusions</button>
+																</nav>
+																<div data-tabs-body class="tabs__content">
+																	<div class="tabs__body">
+																		<ul class="detail-spollers__list">
+																			<li class="detail-spollers__li">
+																				Shared Room
+																				<span>
+																					Included in package
+																				</span>
+																			</li>
+																			<li class="detail-spollers__li">
+																				Double Room
+																				<span>
+																					£45 per person extra
+																				</span>
+																			</li>
+																			<li class="detail-spollers__li">
+																				Single Room
+																				<span>
+																					£80 per person extra
+																				</span>
+																			</li>
+																		</ul>
+																	</div>
+																	<div class="tabs__body">
+																		<p class="detail-spollers__text">
+																			Dolor elit voluptate cupidatat in eiusmod.
+																			Eiusmod ex eu incididunt etile pariatur
+																			dolor mollit reprehenderit magna tempor ex
+																			minim velit sunt do.
+																		</p>
+																	</div>
+																	<div class="tabs__body">
+																		<div data-gallery
+																			class="detail-spollers__images">
+																			<a href="img/tour-detail/shared-big.jpg"
+																				class="detail-spollers__card">
+																				<div class="detail-spollers__name">
+																					Shared
+																				</div>
+																				<img class="detail-spollers__img"
+																					src="@img/tour-detail/shared.jpg"
+																					alt="shared room">
+																			</a>
+																			<a href="img/tour-detail/double-big.jpg"
+																				class="detail-spollers__card">
+																				<div class="detail-spollers__name">
+																					Double
+																				</div>
+																				<img class="detail-spollers__img"
+																					src="@img/tour-detail/double.jpg"
+																					alt="double room">
+																			</a>
+																			<a href="img/tour-detail/single-big.jpg"
+																				class="detail-spollers__card">
+																				<div class="detail-spollers__name">
+																					Single
+																				</div>
+																				<img class="detail-spollers__img"
+																					src="@img/tour-detail/single.jpg"
+																					alt="single room">
+																			</a>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="tabs__body">
+										<div class="detail-tabs">
+											<img class="detail-tabs__icon" src="@img/icons/icon-inclusions.svg"
+												alt="icon-inclusions">
+											<div class="detail-tabs__body">
+												<div data-showmore class="detail-tabs__text-block">
+													<p data-showmore-content="96" class="detail-tabs__text">Dolor elit
+														voluptate cupidatat in eiusmod. Eiusmod ex eu incididunt etile
+														pariatur dolor mollit reprehenderit magna tempor ex minim velit
+														sunt do. Elit dolore sunt cupidatat minim nisi nulla fugiat sit
+														dolor adipisicing excepteur eiusmod. Mollit reprehenderit magna
+														tempor ex.Dolor elit voluptate cupidatat in eiusmod. Eiusmod ex
+														eu incididunt etile pariatur dolor mollit reprehenderit magna
+														tempor ex minim velit sunt do. Elit dolore sunt cupidatat minim
+														nisi nulla fugiat sit dolor adipisicing excepteur eiusmod.
+														Mollit reprehenderit magna tempor ex.</p>
+													<button hidden data-showmore-button type="button"
+														class="block__more"><span>Show
+															More...</span><span>Hide</span></button>
+												</div>
+												<ul class="detail-tabs__list">
+													<li class="detail-tabs__li detail-tabs__li_check">
+														All breakfasts, 4 packed lunches, and 6 dinners
+													</li>
+													<li class="detail-tabs__li detail-tabs__li_check">
+														All Fees and Taxes
+													</li>
+													<li class="detail-tabs__li detail-tabs__li_check">
+														All necessary documents and paperwork (TIMS cards and permit)
+													</li>
+													<li class="detail-tabs__li detail-tabs__li_check">
+														Highly experienced Government Registered guide
+													</li>
+													<li class="detail-tabs__li detail-tabs__li_check">
+														First aid box
+													</li>
+													<li class="detail-tabs__li detail-tabs__li_check">
+														Farewell dinner
+													</li>
+													<li class="detail-tabs__li detail-tabs__li_disable">
+														Alcoholic Beverages
+													</li>
+													<li class="detail-tabs__li detail-tabs__li_disable">
+														Portugal visa fee
+													</li>
+													<li class="detail-tabs__li detail-tabs__li_disable">
+														Personal expenses (Phone calls, bar bills, battery recharge,
+														laundry)
+													</li>
+													<li class="detail-tabs__li detail-tabs__li_disable">
+														Tipping and donations
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="tabs__body">
+										<div class="detail-tabs">
+											<img class="detail-tabs__icon" src="@img/icons/icon-reviews.svg"
+												alt="icon-inclusions">
+											<div class="detail-tabs__body">
+												<div data-showmore class="block">
+													<div data-showmore-content="861" class="block__content">
+														<div class="detail-tabs__review detail-review">
+															<div class="detail-review__head">
+																<img class="detail-review__photo"
+																	src="@img/reviews/photo-1.jpg" alt="photo-1">
+																<div class="detail-review__name">
+																	Brooklyn Simmons
+																</div>
+																<div class="detail-review__rating">
+																	<div class="detail-rating__stars">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="rating five star">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="">
+																	</div>
+																</div>
+															</div>
+															<div class="detail-review__body">
+																<div class="detail-review__top">
+																	<h4 class="detail-review__title">
+																		“Exceptional”
+																	</h4>
+																	<div class="detail-review__date">
+																		Reviewed 23rd, November
+																	</div>
+																</div>
+																<p class="detail-review__text">
+																	Dolor elit voluptate cupidatat in eiusmod. Eiusmod
+																	ex eu
+																	incididunt etile pariatur dolor mollit reprehenderit
+																	magna
+																	tempor ex minim velit sunt do.
+																</p>
+															</div>
+														</div>
+														<div class="detail-tabs__review detail-review">
+															<div class="detail-review__head">
+																<img class="detail-review__photo"
+																	src="@img/reviews/photo-2.jpg" alt="photo-1">
+																<div class="detail-review__name">
+																	Wade Warren
+																</div>
+																<div class="detail-review__rating">
+																	<div class="detail-rating__stars">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="rating four star">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="">
+																		<img src="@img/icons/star-big-gray.svg" alt="">
+																	</div>
+																</div>
+															</div>
+															<div class="detail-review__body">
+																<div class="detail-review__top">
+																	<h4 class="detail-review__title">
+																		“Terrific”
+																	</h4>
+																	<div class="detail-review__date">
+																		Reviewed 23rd, November
+																	</div>
+																</div>
+																<p class="detail-review__text">
+																	Dolor elit voluptate cupidatat in eiusmod. Eiusmod
+																	ex eu
+																	incididunt etile pariatur dolor mollit reprehenderit
+																	magna
+																	tempor ex minim velit sunt do.
+																</p>
+															</div>
+														</div>
+														<div class="detail-tabs__review detail-review">
+															<div class="detail-review__head">
+																<img class="detail-review__photo"
+																	src="@img/reviews/photo-3.jpg" alt="photo-1">
+																<div class="detail-review__name">
+																	Leslie Alexander
+																</div>
+																<div class="detail-review__rating">
+																	<div class="detail-rating__stars">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="rating five star">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="">
+																	</div>
+																</div>
+															</div>
+															<div class="detail-review__body">
+																<div class="detail-review__top">
+																	<h4 class="detail-review__title">
+																		“Awesome”
+																	</h4>
+																	<div class="detail-review__date">
+																		Reviewed 23rd, November
+																	</div>
+																</div>
+																<p class="detail-review__text">
+																	Dolor elit voluptate cupidatat in eiusmod. Eiusmod
+																	ex eu
+																	incididunt etile pariatur dolor mollit reprehenderit
+																	magna
+																	tempor ex minim velit sunt do.
+																</p>
+															</div>
+														</div>
+														<div class="detail-tabs__review detail-review">
+															<div class="detail-review__head">
+																<img class="detail-review__photo"
+																	src="@img/reviews/photo-1.jpg" alt="photo-1">
+																<div class="detail-review__name">
+																	Brooklyn Simmons
+																</div>
+																<div class="detail-review__rating">
+																	<div class="detail-rating__stars">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="rating five star">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="">
+																	</div>
+																</div>
+															</div>
+															<div class="detail-review__body">
+																<div class="detail-review__top">
+																	<h4 class="detail-review__title">
+																		“Exceptional”
+																	</h4>
+																	<div class="detail-review__date">
+																		Reviewed 23rd, November
+																	</div>
+																</div>
+																<p class="detail-review__text">
+																	Dolor elit voluptate cupidatat in eiusmod. Eiusmod
+																	ex eu
+																	incididunt etile pariatur dolor mollit reprehenderit
+																	magna
+																	tempor ex minim velit sunt do.
+																</p>
+															</div>
+														</div>
+														<div class="detail-tabs__review detail-review">
+															<div class="detail-review__head">
+																<img class="detail-review__photo"
+																	src="@img/reviews/photo-2.jpg" alt="photo-1">
+																<div class="detail-review__name">
+																	Wade Warren
+																</div>
+																<div class="detail-review__rating">
+																	<div class="detail-rating__stars">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="rating four star">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="">
+																		<img src="@img/icons/star-big-gray.svg" alt="">
+																	</div>
+																</div>
+															</div>
+															<div class="detail-review__body">
+																<div class="detail-review__top">
+																	<h4 class="detail-review__title">
+																		“Terrific”
+																	</h4>
+																	<div class="detail-review__date">
+																		Reviewed 23rd, November
+																	</div>
+																</div>
+																<p class="detail-review__text">
+																	Dolor elit voluptate cupidatat in eiusmod. Eiusmod
+																	ex eu
+																	incididunt etile pariatur dolor mollit reprehenderit
+																	magna
+																	tempor ex minim velit sunt do.
+																</p>
+															</div>
+														</div>
+														<div class="detail-tabs__review detail-review">
+															<div class="detail-review__head">
+																<img class="detail-review__photo"
+																	src="@img/reviews/photo-3.jpg" alt="photo-1">
+																<div class="detail-review__name">
+																	Leslie Alexander
+																</div>
+																<div class="detail-review__rating">
+																	<div class="detail-rating__stars">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="rating five star">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="">
+																		<img src="@img/icons/star-big-yellow.svg"
+																			alt="">
+																	</div>
+																</div>
+															</div>
+															<div class="detail-review__body">
+																<div class="detail-review__top">
+																	<h4 class="detail-review__title">
+																		“Awesome”
+																	</h4>
+																	<div class="detail-review__date">
+																		Reviewed 23rd, November
+																	</div>
+																</div>
+																<p class="detail-review__text">
+																	Dolor elit voluptate cupidatat in eiusmod. Eiusmod
+																	ex eu
+																	incididunt etile pariatur dolor mollit reprehenderit
+																	magna
+																	tempor ex minim velit sunt do.
+																</p>
+															</div>
+														</div>
+													</div>
+													<button hidden data-showmore-button type="button"
+														class="block__more">
+														<span>Show more reviews</span>
+														<span>Hide</span>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="tabs__body">
+										<div class="detail-tabs">
+											<img class="detail-tabs__icon" src="@img/icons/icon-faq.svg"
+												alt="icon-inclusions">
+											<div class="detail-tabs__body">
+												<div data-showmore class="block">
+													<div data-showmore-content="523" class="block__content">
+														<div data-spollers class="detail-spollers">
+															<div class="detail-spollers__item">
+																<button type="button" data-spoller
+																	class="detail-spollers__title _spoller-active">
+																	<span>?</span> What type of clothing are suitable
+																	for this trek?
+																</button>
+																<div class="detail-spollers__body">
+																	<p class="detail-spollers__text">
+																		Dolor elit voluptate cupidatat in eiusmod.
+																		Eiusmod ex eu incididunt etile pariatur dolor
+																		mollit reprehenderit magna tempor ex minim velit
+																		sunt do.
+																	</p>
+																</div>
+															</div>
+														</div>
+														<div data-spollers class="detail-spollers">
+															<div class="detail-spollers__item">
+																<button type="button" data-spoller
+																	class="detail-spollers__title">
+																	<span>?</span> What type of clothing are suitable
+																	for this trek?
+																</button>
+																<div class="detail-spollers__body">
+																	<p class="detail-spollers__text">
+																		Dolor elit voluptate cupidatat in eiusmod.
+																		Eiusmod ex eu incididunt etile pariatur dolor
+																		mollit reprehenderit magna tempor ex minim velit
+																		sunt do.
+																	</p>
+																</div>
+															</div>
+														</div>
+														<div data-spollers class="detail-spollers">
+															<div class="detail-spollers__item">
+																<button type="button" data-spoller
+																	class="detail-spollers__title">
+																	<span>?</span> What type of clothing are suitable
+																	for this trek?
+																</button>
+																<div class="detail-spollers__body">
+																	<p class="detail-spollers__text">
+																		Dolor elit voluptate cupidatat in eiusmod.
+																		Eiusmod ex eu incididunt etile pariatur dolor
+																		mollit reprehenderit magna tempor ex minim velit
+																		sunt do.
+																	</p>
+																</div>
+															</div>
+														</div>
+														<div data-spollers class="detail-spollers">
+															<div class="detail-spollers__item">
+																<button type="button" data-spoller
+																	class="detail-spollers__title">
+																	<span>?</span> What type of clothing are suitable
+																	for this trek?
+																</button>
+																<div class="detail-spollers__body">
+																	<p class="detail-spollers__text">
+																		Dolor elit voluptate cupidatat in eiusmod.
+																		Eiusmod ex eu incididunt etile pariatur dolor
+																		mollit reprehenderit magna tempor ex minim velit
+																		sunt do.
+																	</p>
+																</div>
+															</div>
+														</div>
+														<div data-spollers class="detail-spollers">
+															<div class="detail-spollers__item">
+																<button type="button" data-spoller
+																	class="detail-spollers__title">
+																	<span>?</span> What type of clothing are suitable
+																	for this trek?
+																</button>
+																<div class="detail-spollers__body">
+																	<p class="detail-spollers__text">
+																		Dolor elit voluptate cupidatat in eiusmod.
+																		Eiusmod ex eu incididunt etile pariatur dolor
+																		mollit reprehenderit magna tempor ex minim velit
+																		sunt do.
+																	</p>
+																</div>
+															</div>
+														</div>
+														<div data-spollers class="detail-spollers">
+															<div class="detail-spollers__item">
+																<button type="button" data-spoller
+																	class="detail-spollers__title">
+																	<span>?</span> What type of clothing are suitable
+																	for this trek?
+																</button>
+																<div class="detail-spollers__body">
+																	<p class="detail-spollers__text">
+																		Dolor elit voluptate cupidatat in eiusmod.
+																		Eiusmod ex eu incididunt etile pariatur dolor
+																		mollit reprehenderit magna tempor ex minim velit
+																		sunt do.
+																	</p>
+																</div>
+															</div>
+														</div>
+														<div data-spollers class="detail-spollers">
+															<div class="detail-spollers__item">
+																<button type="button" data-spoller
+																	class="detail-spollers__title">
+																	<span>?</span> What type of clothing are suitable
+																	for this trek?
+																</button>
+																<div class="detail-spollers__body">
+																	<p class="detail-spollers__text">
+																		Dolor elit voluptate cupidatat in eiusmod.
+																		Eiusmod ex eu incididunt etile pariatur dolor
+																		mollit reprehenderit magna tempor ex minim velit
+																		sunt do.
+																	</p>
+																</div>
+															</div>
+														</div>
+													</div>
+													<button hidden data-showmore-button type="button"
+														class="block__more">
+														<span>Show more FAQ’s</span>
+														<span>Hide</span>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<aside class="tour-detail__aside aside-check">
+							<form class="aside-check__form">
+								<div class="aside-check__head">
+									<div class="aside-check__oldprice">
+										£2469
+									</div>
+									<div class="aside-check__priceblock">
+										<div class="aside-check__price">
+											£1759
+											<span>per person</span>
+										</div>
+										<div class="aside-check__sale">
+											20% OFF
+										</div>
+									</div>
+									<p class="aside-check__text">
+										*Price based on selections bellow.
+									</p>
+								</div>
+								<div class="aside-check__item">
+									<label class="aside-check__label">
+										Dates
+									</label>
+									<div class="body-search__calendar aside-filter__calendar aside-check__calendar">
+										<input data-datepicker type="text" name="date" value="Select preferred dates">
+									</div>
+								</div>
+								<div class="aside-check__item">
+									<label class="aside-check__label">
+										Travelers
+									</label>
+									<div class="aside-check__inputs">
+										<input autocomplete="off" type="text" name="form[]" data-error="Error"
+											placeholder="2 Adult, 1 Child" class="input">
+										<div data-quantity class="quantity">
+											<button data-quantity-minus type="button"
+												class="quantity__button quantity__button_minus">
+												<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M12 0.963836C18.0719 0.963836 23.0362 5.92807 23.0362 12C23.0362 18.0719 18.0719 23.0362 12 23.0362C5.92807 23.0362 0.963836 18.0719 0.963836 12C0.963836 5.92807 5.92807 0.963836 12 0.963836ZM12 0C5.34905 0 0 5.34905 0 12C0 18.651 5.397 24 12 24C18.6018 24 24 18.651 24 12C24 5.34905 18.6509 0 12 0Z"
+														fill="#99A3AD" />
+													<path d="M5.25 11.25H18V12.75H5.25V11.25Z" fill="#99A3AD" />
+												</svg>
+											</button>
+											<div class="quantity__input">
+												<input data-quantity-value autocomplete="off" type="text" name="form[]"
+													value="1">
+											</div>
+											<button data-quantity-plus type="button"
+												class="quantity__button quantity__button_plus">
+												<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M12 0.963836C18.0719 0.963836 23.0362 5.92807 23.0362 12C23.0362 18.0719 18.0719 23.0362 12 23.0362C5.92807 23.0362 0.963836 18.0719 0.963836 12C0.963836 5.92807 5.92807 0.963836 12 0.963836ZM12 0C5.34905 0 0 5.34905 0 12C0 18.6509 5.397 24 12 24C18.6018 24 24 18.6509 24 12C24 5.34905 18.6509 0 12 0Z"
+														fill="#99A3AD" />
+													<path d="M11.4222 5.68707H12.386V18.2169H11.4222V5.68707Z"
+														fill="#99A3AD" />
+													<path d="M5.59001 11.566H18.024V12.5298H5.59001V11.566Z"
+														fill="#99A3AD" />
+												</svg>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="aside-check__item">
+									<label class="aside-check__label">
+										Selections
+									</label>
+									<div class="aside-check__selections">
+										<select multiple name="form[]" data-class-modif="form" class="aside-check__select">
+											<option value="1" selected>Flight</option>
+											<option value="2">Hotel</option>
+											<option value="3">Car</option>
+											<option value="4">Food</option>
+										</select>
+									</div>
+								</div>
+								<button type="submit" class="aside-check__btn">
+									<span>
+										Check Availability
+									</span>
+								</button>
+							</form>
+							<div class="aside-check__asks aside-asks">
+								<p class="aside-asks__text">
+									If you have question about this tour,
+									please feel free to ask
+								</p>
+								<a href="#" class="aside-asks__link">
+									Ask the Tour Expert
+								</a>
+								<div class="aside-asks__info">
+									*All questions are replied to within 24-48 hrs
+								</div>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
+			<section class="page-tour__viewed viewed">
+				<div class="viewed__container">
+					<div class="viewed__head">
+						<div class="viewed__head-info">
+							<h3 class="viewed__title title">
+								Similar Tours
+							</h3>
+							<p class="viewed__text text">
+								Sost Brilliant reasons Entrada should be your one-stop-shop!
+							</p>
+						</div>
+						<div class="viewed__head-navigation">
+							<button type="button" class="swiper-button-prev button-prev">
+								<svg width="12" height="20" viewBox="0 0 12 20" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path d="M10.461 18.34L1.99805 9.87704L10.461 1.41504" stroke="#546179"
+										stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+							</button>
+							<button type="button" class="swiper-button-next button-next">
+								<svg width="11" height="19" viewBox="0 0 11 19" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path d="M1 17.925L9.463 9.463L1 1" stroke="#546179" stroke-width="2"
+										stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</button>
+						</div>
+					</div>
+					<div class="viewed__slider swiper">
+						<div class="viewed__wrapper swiper-wrapper">
+							<div class="viewed__slide swiper-slide">
+								<div class="viewed__slide-img viewed__slide-ibg">
+									<img src="@img/recently-viewed/photo-1.jpg" alt="tours">
+									<div class="viewed__slide-sale">
+										30%
+									</div>
+									<div class="viewed__slide-block">
+										<div class="viewed__slide-days">
+											10 Days | 09 Night
+										</div>
+										<div class="viewed__slide-info">
+											<div class="viewed__slide-price">
+												$895.50
+											</div>
+											<div class="viewed__slide-links">
+												<button type="button" class="viewed__slide-share"></button>
+												<a href="" class="viewed__slide-link">Explore</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="viewed__slide-body">
+									<h3 class="viewed__slide-title">
+										<a href="">
+											Train Tour Skyline
+										</a>
+									</h3>
+									<p class="viewed__slide-text">
+										Check Out Daily Deals and Promotion on Hotels. 
+										Easy & Fast Booking
+									</p>
+								</div>
+							</div>
+							<div class="viewed__slide swiper-slide">
+								<div class="viewed__slide-img viewed__slide-ibg">
+									<img src="@img/recently-viewed/photo-2.jpg" alt="tours">
+									<div class="viewed__slide-sale">
+										30%
+									</div>
+									<div class="viewed__slide-block">
+										<div class="viewed__slide-days">
+											07 Days | 06 Night
+										</div>
+										<div class="viewed__slide-info">
+											<div class="viewed__slide-price">
+												$1895
+											</div>
+											<div class="viewed__slide-links">
+												<button type="button" class="viewed__slide-share"></button>
+												<a href="" class="viewed__slide-link">Explore</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="viewed__slide-body">
+									<h3 class="viewed__slide-title">
+										<a href="">
+											Sea Nature Views
+										</a>
+									</h3>
+									<p class="viewed__slide-text">
+										Check Out Daily Deals and Promotion on Hotels. 
+										Easy & Fast Booking
+									</p>
+								</div>
+							</div>
+							<div class="viewed__slide swiper-slide">
+								<div class="viewed__slide-img viewed__slide-ibg">
+									<img src="@img/recently-viewed/photo-3.jpg" alt="tours">
+									<div class="viewed__slide-sale">
+										30%
+									</div>
+									<div class="viewed__slide-block">
+										<div class="viewed__slide-days">
+											11 Days | 10 Night
+										</div>
+										<div class="viewed__slide-info">
+											<div class="viewed__slide-price">
+												$995.50
+											</div>
+											<div class="viewed__slide-links">
+												<button type="button" class="viewed__slide-share"></button>
+												<a href="" class="viewed__slide-link">Explore</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="viewed__slide-body">
+									<h3 class="viewed__slide-title">
+										<a href="">
+											Trilogy Market Ptr
+										</a>
+									</h3>
+									<p class="viewed__slide-text">
+										Check Out Daily Deals and Promotion on Hotels. 
+										Easy & Fast Booking
+									</p>
+								</div>
+							</div>
+							<div class="viewed__slide swiper-slide">
+								<div class="viewed__slide-img viewed__slide-ibg">
+									<img src="@img/recently-viewed/photo-1.jpg" alt="tours">
+									<div class="viewed__slide-sale">
+										30%
+									</div>
+									<div class="viewed__slide-block">
+										<div class="viewed__slide-days">
+											10 Days | 09 Night
+										</div>
+										<div class="viewed__slide-info">
+											<div class="viewed__slide-price">
+												$895.50
+											</div>
+											<div class="viewed__slide-links">
+												<button type="button" class="viewed__slide-share"></button>
+												<a href="" class="viewed__slide-link">Explore</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="viewed__slide-body">
+									<h3 class="viewed__slide-title">
+										<a href="">
+											Train Tour Skyline
+										</a>
+									</h3>
+									<p class="viewed__slide-text">
+										Check Out Daily Deals and Promotion on Hotels. 
+										Easy & Fast Booking
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

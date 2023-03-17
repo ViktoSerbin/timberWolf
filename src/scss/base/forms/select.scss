@@ -314,7 +314,8 @@
                 flex: 0 0 14px;
                 width: 14px;
                 transition: all 0.3s ease 0s;
-                background: url('@img/icons/arrow-select-2.svg') center no-repeat;
+                background: url("@img/icons/arrow-select-2.svg") center
+                    no-repeat;
                 ._select-open & {
                     transform: rotate(-180deg);
                 }
@@ -395,5 +396,136 @@
         &._select-open {
             z-index: 10;
         }
+    }
+}
+
+.aside-check {
+    .select {
+        position: relative;
+        width: 100%;
+        // .select__body
+        &__body {
+            position: relative;
+        }
+        // .select__title
+        &__title {
+            min-width: rem(150);
+            font-weight: 400;
+            font-size: rem(16);
+            letter-spacing: 0.5px;
+            color: #99a3ad;
+            line-height: 1.1;
+            text-align: left;
+            white-space: nowrap;
+            border: none;
+            background-color: inherit;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 0;
+        }
+        // .select__value
+        &__value {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: rem(46);
+            border: 1px solid #dce5eb;
+            border-radius: rem(8);
+            padding: 0 rem(16) 0 rem(16);
+            gap: rem(25);
+            > * {
+                flex: 1 1 auto;
+            }
+            &::after {
+                content: "";
+                align-self: center;
+                flex: 0 0 24px;
+                width: 24px;
+                height: 24px;
+                transition: all 0.3s ease 0s;
+                background: url("@img/icons/plus-select.svg") center no-repeat;
+                ._select-open & {
+                    transform: rotate(-45deg);
+                }
+            }
+            &._select-pseudo-label {
+                &::before {
+                    content: attr(data-pseudo-label);
+                    opacity: 0.5;
+                }
+            }
+        }
+        // .select__text
+        &__text {
+            flex: 1 1 auto;
+        }
+        &__input {
+            width: 100%;
+            background-color: transparent;
+            height: 100%;
+        }
+        // .select__options
+        &__options {
+            color: #1d293f;
+            position: absolute;
+            top: 46px;
+            min-width: 100%;
+            left: 0;
+            background-color: #FBFBFB;
+            border: 1px solid #dce5eb;
+            padding: 10px 5px 10px 5px;
+            box-shadow: 0px 43px 66px rgba(0, 0, 0, 0.07);
+            border-radius: 16px;
+        }
+        // .select__scroll
+        &__scroll {
+            overflow-y: auto;
+            overflow-x: hidden;
+            // Максимальная высота
+            max-height: 200px;
+            // Стили скроллбара
+            .simplebar-scrollbar {
+                &::before {
+                    //opacity: 1;
+                }
+            }
+        }
+        // .select__option
+        &__option {
+            width: 100%;
+            text-align: left;
+            white-space: nowrap;
+            cursor: pointer;
+            padding: 5px 10px;
+            color: inherit;
+            border-radius: 10px;
+            transition: all 0.2s ease 0s;
+            &._select-selected {
+                background-color: #eee;
+            }
+            @media (any-hover: hover) {
+                &:hover {
+                    background: $lightGreen;
+                    color: #fff;
+                }
+            }
+        }
+        // Конструкция дополнительных данных
+        &__row {
+            display: inline-flex;
+            align-items: center;
+        }
+        &__asset {
+        }
+        &__text {
+        }
+
+        // Состояния селекта
+        &._select-open {
+            z-index: 10;
+        }
+    }
+    ._select-open .select__value:after {
+        transform: rotate(-45deg);
     }
 }

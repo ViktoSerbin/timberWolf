@@ -154,12 +154,14 @@
         border: 1px solid transparent;
         border-radius: 10px;
         transition: all 0.3s ease 0s;
+        cursor: pointer;
         &:focus,
         &:not(:placeholder-shown) {
             width: 100%;
             padding: rem(6) rem(15) rem(6) rem(40);
             box-shadow: 0px 32px 84px rgba(14, 86, 124, 0.2);
             border: 1px solid $lightGreen;
+            cursor: auto;
             & + .search-form__btn {
                 pointer-events: all;
                 @media (max-width:$tablet){

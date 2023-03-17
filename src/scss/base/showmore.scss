@@ -3,15 +3,17 @@
 [data-showmore-content] {
 }
 [data-showmore-button] {
-	span {
-		&:last-child {
-			display: none;
-		}
-		._showmore-active & {
-			display: none;
-			&:last-child {
-				display: block;
-			}
-		}
-	}
+    span {
+        letter-spacing: 0.5px;
+        color: #99a3ad;
+        &:last-child {
+            display: none;
+        }
+        ._showmore-active & {
+            display: none;
+            &:last-child {
+                display: block;
+            }
+        }
+    }
 }

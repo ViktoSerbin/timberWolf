@@ -9,6 +9,10 @@ document.body.addEventListener("click", function (e) {
     if (targetElement.closest('.featured__item-like')) {
         targetElement.classList.toggle('_active');
     }
+
+	if (targetElement.closest('.detail-tour__wishlist')) {
+        targetElement.classList.toggle('_active');
+    }
 });
 
 function menuFilter() {

@@ -15,7 +15,7 @@
 // @import "base/maps";
 
 // Стили блока "показать еще"
-// @import "base/showmore";
+@import "base/showmore";
 
 // Стили для полноэкранного блока
 // @import "base/fullscreen";
@@ -67,7 +67,6 @@
 	position: relative;
 	overflow: hidden;
 	height: 0;
-	padding-bottom: 56.25%;
 	video,
 	iframe,
 	object,
