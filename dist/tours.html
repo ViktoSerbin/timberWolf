@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Tours</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20230318225812">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap&_v=20230318225812" rel="stylesheet">
+</head>
+
+<body>
+	<!-- Стилі для body -->
+	<style>
+		.preloader {
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 99;
+			display: grid;
+			place-items: center;
+			background-color: #28B0A6;
+			overflow: hidden;
+		}
+
+		.preloader__planet {
+			display: grid;
+			place-items: center;
+			background-color: #28B0A6;
+			border-radius: 50%;
+			padding: 50px;
+			animation: globus 1.5s infinite linear;
+		}
+
+		@keyframes globus {
+			0% {
+				transform: rotate(-360deg);
+			}
+		}
+	</style>
+
+	<div class="preloader" id="preloader">
+		<div class="preloader__planet">
+			<svg width="100" height="100" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M40.6831 40.997C39.8983 40.9928 39.1214 40.8469 38.3938 40.567C38.1352 40.4757 37.897 40.3387 37.6918 40.1633C37.2656 39.7504 37.0217 39.1979 37.01 38.6192C36.9565 37.9211 37.1188 37.2235 37.4768 36.6121C37.8348 36.0008 38.3728 35.5025 39.0247 35.1786C40.821 34.4721 42.5112 36.0547 43.0669 36.5744C43.3543 36.8002 43.5866 37.0828 43.7477 37.4026C43.9089 37.7224 43.9949 38.0718 44 38.4264C43.9687 38.8382 43.8158 39.2332 43.5589 39.5659C43.2334 40.0056 42.8024 40.3651 42.3017 40.6145C41.801 40.8639 41.2451 40.9961 40.6799 41L40.6831 40.997ZM39.9822 36.3261C39.8385 36.3257 39.6961 36.3524 39.5634 36.4049C39.184 36.6225 38.8751 36.9354 38.6706 37.3094C38.4661 37.6833 38.374 38.1037 38.4044 38.5243C38.3995 38.7652 38.4848 38.9998 38.6451 39.1864C38.9156 39.3653 39.2308 39.4732 39.5591 39.4992C39.9686 39.6039 40.3906 39.6582 40.8146 39.6607C41.1307 39.6397 41.4378 39.5519 41.7139 39.4039C41.9899 39.2559 42.2279 39.0513 42.4105 38.8049C42.516 38.6757 42.5833 38.522 42.6056 38.3598C42.5564 38.0255 42.3704 37.7233 42.0881 37.5191C41.5636 36.889 40.8142 36.4645 39.9822 36.3261Z" fill="white" />
+				<path d="M24.6489 46C24.3556 46.0011 24.064 45.9559 23.7845 45.8659C22.779 45.5413 21.7578 45.2891 20.7464 45.0022C20.2806 44.8976 19.8392 44.7024 19.4469 44.4273C18.7834 43.9458 18.181 43.3833 17.6534 42.7524C17.377 42.4214 17.1732 42.0345 17.0556 41.6176C16.6263 39.8523 18.7844 39.2814 20.0467 38.9925C20.6476 38.8543 21.2407 38.6833 21.8235 38.4802C22.4192 38.3213 22.94 37.9537 23.2935 37.4427C23.5072 37.0853 23.6208 36.6802 23.8384 36.3228C24.0091 36.0496 24.2147 35.8006 24.4499 35.5821C24.8616 35.1899 25.3408 34.8782 25.7318 34.4582C26.1111 33.9906 26.4287 33.4749 26.6766 32.9243C27.3548 31.5998 28.1976 29.9458 30.2047 30.0014C31.1443 30.0976 32.0424 30.4421 32.8092 31.0006C33.576 31.5591 34.1844 32.3118 34.5737 33.1834C34.8779 33.6703 35.0255 34.2406 34.9964 34.816C34.9673 35.3914 34.7627 35.9435 34.411 36.3962C34.3604 36.4652 34.2968 36.5234 34.224 36.5675C34.1511 36.6116 34.0704 36.6407 33.9865 36.6532C33.9025 36.6657 33.817 36.6613 33.7347 36.6403C33.6524 36.6193 33.575 36.5821 33.5069 36.5308C33.4389 36.4795 33.3814 36.4151 33.3379 36.3413C33.2944 36.2675 33.2656 36.1857 33.2533 36.1007C33.241 36.0156 33.2453 35.929 33.266 35.8456C33.2868 35.7623 33.3235 35.6839 33.3741 35.6149C33.5829 35.3557 33.7005 35.0336 33.7085 34.6992C33.7164 34.3648 33.6143 34.0373 33.4182 33.7682C33.1342 33.1084 32.6856 32.5348 32.1165 32.1038C31.5474 31.6728 30.8774 31.3992 30.1724 31.3099C29.0502 31.2801 28.5367 32.129 27.8203 33.5269C27.5213 34.1852 27.1352 34.7991 26.6727 35.3518C26.2865 35.7658 25.8298 36.0815 25.4153 36.4588C24.9911 36.9548 24.6471 37.5158 24.3961 38.1208C23.2935 39.9625 20.9473 39.9516 19.1587 40.585C18.8755 40.6843 18.4639 40.8223 18.3149 41.1142C18.2669 41.2075 18.1356 41.7566 20.2299 43.3898C20.4939 43.5578 20.7852 43.6768 21.0904 43.7413C22.1175 44.0332 23.1543 44.2893 24.1755 44.619C24.7982 44.7321 25.4402 44.6493 26.0151 44.3816C26.965 44.086 27.9526 43.9335 28.9463 43.9289C29.6977 43.9444 30.4473 43.8518 31.173 43.6539C31.4222 43.5837 31.6521 43.4562 31.8447 43.2812C32.0373 43.1062 32.1875 42.8886 32.2834 42.6452C32.3226 42.4341 32.306 42.2162 32.2355 42.0136C32.1649 41.8111 32.0428 41.6309 31.8816 41.4915C31.4143 41.0211 31.1497 40.3826 31.1455 39.7153C31.1635 39.1874 31.2685 38.6662 31.4562 38.1734C31.4864 38.0927 31.532 38.0187 31.5905 37.9559C31.649 37.8931 31.7192 37.8427 31.797 37.8075C31.8749 37.7723 31.9588 37.753 32.044 37.7509C32.1292 37.7487 32.214 37.7636 32.2935 37.7948C32.373 37.826 32.4456 37.8728 32.5072 37.9326C32.5687 37.9923 32.618 38.0638 32.6521 38.143C32.6862 38.2221 32.7046 38.3073 32.706 38.3936C32.7075 38.48 32.6921 38.5657 32.6607 38.646C32.5254 39.0028 32.4499 39.38 32.4372 39.762C32.4255 40.0836 32.5813 40.2921 32.8802 40.6615C33.2104 40.9811 33.4459 41.3878 33.56 41.8358C33.6742 42.2838 33.6624 42.7551 33.5262 43.1967C33.3899 43.6383 33.1345 44.0325 32.7889 44.3349C32.4432 44.6372 32.021 44.8357 31.5699 44.9079C30.729 45.1461 29.8586 45.2598 28.9856 45.2454C28.4173 45.2463 27.85 45.2931 27.2891 45.3854C26.4305 45.6755 25.5464 45.8813 24.6489 46Z" fill="white" />
+				<path d="M47.9231 17.1374C47.8347 16.9868 47.6901 16.8774 47.5211 16.8333C47.3521 16.7893 47.1725 16.8142 47.0218 16.9026C46.8711 16.991 46.7617 17.1356 46.7177 17.3046C46.6737 17.4737 46.6986 17.6533 46.787 17.804C48.6815 21.0452 49.6808 24.7316 49.6825 28.486C49.6842 32.2403 48.6883 35.9276 46.7967 39.1705C44.9051 42.4134 42.1857 45.0954 38.917 46.9419C35.6484 48.7883 31.9478 49.733 28.194 49.6791C24.4403 49.6252 20.7684 48.5747 17.554 46.6351C14.3397 44.6956 11.6985 41.9367 9.90074 38.6408C8.10301 35.3449 7.21334 31.6305 7.32281 27.8778C7.43228 24.125 8.53696 20.4688 10.5238 17.2833C10.3509 19.3629 10.3439 21.3376 10.3609 22.8736C10.3459 23.2816 10.3962 23.6895 10.5098 24.0817C10.7507 24.7409 11.0517 25.3765 11.4091 25.9805C11.7668 26.577 12.0618 27.2089 12.2895 27.8662C12.49 28.4797 12.7727 29.0633 13.1298 29.601C13.5163 30.2411 14.0687 30.7646 14.7287 31.116C15.0234 31.2591 15.3463 31.3346 15.674 31.3368C15.9455 31.3362 16.2144 31.2826 16.4654 31.1789C16.9154 30.9395 17.2836 30.5711 17.5229 30.121C17.7621 29.6709 17.8616 29.1596 17.8084 28.6527C17.8084 28.5867 17.8174 28.5227 17.8224 28.4598C17.8736 28.0262 17.97 27.5991 18.1102 27.1856C18.2821 26.6755 18.3954 26.1475 18.4479 25.6117C18.4459 24.4775 18.1757 23.3598 17.6595 22.3499C17.5046 21.9832 17.3157 21.6044 17.1329 21.2387C16.5533 20.0784 15.9548 18.8783 16.3764 17.9759C17.4197 15.7504 20.1157 14.1954 22.2881 13.4879C22.9134 13.2898 23.5623 13.1755 24.2176 13.1481C24.7012 13.2087 25.1657 13.3742 25.5786 13.6331C25.9915 13.8921 26.3428 14.2381 26.6079 14.6471C26.9122 15.1272 27.3228 15.531 27.8079 15.8273C28.293 16.1235 28.8397 16.3044 29.4058 16.356C30.9047 16.3829 32.1418 15.1568 33.262 13.8337C33.848 13.2076 34.3268 12.4891 34.6789 11.7071C34.9509 10.9024 35.0877 10.0582 35.0836 9.20879C35.0976 8.92298 35.1126 8.64617 35.1376 8.37735C39.0787 9.67507 42.5501 12.1054 45.1182 15.3646C45.2266 15.5017 45.385 15.59 45.5585 15.6102C45.732 15.6305 45.9065 15.581 46.0435 15.4726C46.1805 15.3642 46.2689 15.2058 46.2891 15.0322C46.3093 14.8587 46.2598 14.6842 46.1514 14.5472C44.2506 12.1425 41.8786 10.1517 39.1808 8.69664C36.4831 7.24162 33.5165 6.35316 30.4631 6.08578C27.4097 5.81839 24.3339 6.17771 21.4243 7.14169C18.5148 8.10567 15.8328 9.65398 13.5431 11.6916C11.2533 13.7293 9.40392 16.2133 8.10846 18.9914C6.813 21.7694 6.09875 24.7828 6.00954 27.8468C5.92032 30.9108 6.458 33.9607 7.58962 36.8094C8.72123 39.6581 10.4229 42.2455 12.5902 44.413C16.4587 48.2797 21.6029 50.6049 27.0612 50.9541C32.5194 51.3032 37.9179 49.6524 42.2475 46.3101C46.577 42.9679 49.5412 38.1631 50.5858 32.794C51.6303 27.425 50.6838 21.8593 47.9231 17.1374ZM33.8495 7.99961C33.8036 8.38535 33.7846 8.76909 33.7666 9.14284C33.7733 9.84912 33.6667 10.5519 33.4508 11.2244C33.1475 11.8709 32.7426 12.4647 32.2517 12.9832C30.6989 14.821 29.9254 15.0488 29.4258 15.0379C29.0591 14.9778 28.7098 14.8388 28.402 14.6305C28.0942 14.4223 27.8353 14.1497 27.6431 13.8317C27.2644 13.2701 26.7658 12.7996 26.1833 12.4539C25.6009 12.1083 24.9489 11.8963 24.2746 11.833C22.8249 11.8672 21.4039 12.2439 20.1277 12.9323C19.0801 13.4229 18.1037 14.0528 17.2248 14.805C16.9234 15.0659 16.6387 15.3456 16.3724 15.6424C15.8915 16.1733 15.4905 16.7716 15.1823 17.4182C14.4908 18.8982 15.2673 20.4542 15.9538 21.8283C16.6556 22.9401 17.0615 24.2129 17.1329 25.5258C17.085 25.9636 16.9892 26.395 16.8471 26.8119C16.6648 27.3817 16.5458 27.9699 16.4924 28.5657C16.4454 29.2363 16.2835 30.4005 15.2932 29.9298C14.4529 29.3353 13.8381 28.4743 13.5485 27.4864C13.2955 26.7425 12.9653 26.0271 12.5633 25.3519C12.2465 24.8166 11.979 24.2536 11.7639 23.67C11.6975 23.407 11.6702 23.1356 11.6829 22.8646C11.6415 20.7669 11.7203 18.6685 11.9187 16.5798C11.9717 16.0801 11.9987 15.6334 12.0007 15.2277C12.478 14.6341 12.9873 14.0669 13.5265 13.5289C16.624 10.4091 20.6224 8.34023 24.9581 7.61387C27.0712 7.26088 29.2253 7.22719 31.3484 7.51394C32.1924 7.61757 33.0281 7.77986 33.8495 7.99961Z" fill="white" />
+				<path d="M41.8535 15.9569C41.5944 15.5178 41.2437 15.1406 40.8258 14.8515C40.4079 14.5624 39.9327 14.3682 39.4331 14.2824C38.4013 14.0142 37.3299 13.9361 36.2706 14.0521C35.8576 14.0807 35.4598 14.2203 35.1183 14.4564C34.8001 14.7271 34.5542 15.0739 34.4031 15.4651C33.8218 16.2868 33.381 17.2008 33.0989 18.1692C33.0827 18.4002 33.0796 18.6319 33.0896 18.8632C33.118 19.087 33.0972 19.3143 33.0286 19.5291C32.9403 19.6598 32.8341 19.7773 32.7134 19.8782C32.361 20.117 32.1162 20.4862 32.032 20.9058C31.9479 21.3254 32.0311 21.7615 32.2638 22.1196C32.6255 22.5176 33.0967 22.7977 33.6171 22.9243C34.1376 23.0509 34.6836 23.0182 35.1855 22.8303C36.246 22.4609 37.2202 21.8764 38.0482 21.113L40.4883 19.1008C41.3998 18.3464 42.3765 17.1907 41.8535 15.9569ZM39.6212 18.0348L37.1812 20.047C36.1373 20.9077 35.0242 21.7361 33.8988 21.5861C33.7065 21.5675 33.5265 21.4825 33.3893 21.3454C33.2425 21.1786 33.5185 20.9942 33.6394 20.8817C33.8752 20.6804 34.0748 20.4396 34.2295 20.1699C34.3758 19.8705 34.4511 19.5409 34.4496 19.2071C34.4569 18.9122 34.4135 18.6225 34.4496 18.3286C34.5535 17.876 34.7553 17.4522 35.0408 17.0876C35.2625 16.7572 35.4607 16.4114 35.634 16.0528C35.7013 15.868 35.8046 15.6986 35.9379 15.5547C36.3364 15.3833 36.7726 15.3204 37.2029 15.3724C38.7314 15.3724 40.3322 15.8694 40.5989 16.4978C40.7467 16.8406 40.3912 17.4023 39.6212 18.0348Z" fill="white" />
+			</svg>
+		</div>
+	</div>
+
+	<script>
+		window.addEventListener("load", function() {
+			let preloader = document.getElementById('preloader');
+			setTimeout(function() {
+				preloader.style.display = 'none';
+			}, 10);
+		});
+	</script>
+	<div class="wrapper">
+		<header class="header ">
+			<div class="header__container">
+				<div class="header__body">
+					<a href="home.html" class="header__logo"><img src="img/logo.svg" alt=""></a>
+					<div class="header__menu menu">
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item"><a href="" class="menu__link">Destination</a></li>
+								<li class="menu__item"><a href="" class="menu__link">Activities</a></li>
+								<li class="menu__item"><a href="tours.html" class="menu__link">Catalog</a></li>
+							</ul>
+							<form class="menu__form-search search-form">
+								<input type="text" placeholder="Search tours" class="search-form__input">
+								<button type="submit" class="search-form__btn">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M23.6322 21.591L18.1915 16.1503C19.5014 14.4065 20.2085 12.284 20.2061 10.103C20.2061 4.53226 15.6738 0 10.103 0C4.53226 0 0 4.53226 0 10.103C0 15.6738 4.53226 20.2061 10.103 20.2061C12.284 20.2085 14.4065 19.5014 16.1503 18.1915L21.591 23.6322C21.8664 23.8783 22.2256 24.0098 22.5948 23.9994C22.9641 23.9891 23.3154 23.8378 23.5766 23.5766C23.8378 23.3154 23.9891 22.9641 23.9994 22.5948C24.0098 22.2256 23.8783 21.8664 23.6322 21.591ZM2.88658 10.103C2.88658 8.67576 3.30982 7.28053 4.10277 6.09379C4.89573 4.90705 6.02279 3.9821 7.34142 3.4359C8.66006 2.88971 10.111 2.7468 11.5109 3.02525C12.9108 3.30369 14.1966 3.99099 15.2058 5.00023C16.2151 6.00947 16.9024 7.29532 17.1808 8.69518C17.4593 10.095 17.3164 11.546 16.7702 12.8647C16.224 14.1833 15.299 15.3103 14.1123 16.1033C12.9255 16.8963 11.5303 17.3195 10.103 17.3195C8.18982 17.3172 6.35562 16.5562 5.00277 15.2033C3.64992 13.8505 2.88888 12.0163 2.88658 10.103Z" fill="#1D293F" />
+									</svg>
+								</button>
+							</form>
+							<div class="menu__btns">
+								<button type="button" class="header__btn">Login</button>
+								<button type="button" class="header__btn btn-green">Sign up</button>
+							</div>
+						</nav>
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="page-tours">
+			<div class="page-tours__container">
+				<div class="page-tours__wrapper">
+					<div class="page-tours__head">
+						<div class="page-tours__showing">
+							Showing 1 - 10 of 2037 results for “cultural”
+						</div>
+						<div class="page-tours__sort sortby">
+							<div class="sortby__text">
+								Sort by:
+							</div>
+							<select class="sortby__select" name="form[]" data-class-modif="form">
+								<option value="1" selected>Most Popular</option>
+								<option value="2">Price Descending</option>
+								<option value="3">Price Ascending</option>
+								<option value="4">Newest</option>
+							</select>
+						</div>
+					</div>
+					<div class="page-tours__sorting sorting">
+						<button class="sorting__item" type="button">
+							<img class="sorting__icon" src="img/icons/deals.svg" alt="Discounted Deals">
+							<span class="sorting__title">
+								Discounted Deals
+							</span>
+						</button>
+						<button class="sorting__item" type="button">
+							<img class="sorting__icon" src="img/icons/cancellation.svg" alt="Free Cancellation">
+							<span class="sorting__title">
+								Free Cancellation
+							</span>
+						</button>
+						<button class="sorting__item" type="button">
+							<img class="sorting__icon" src="img/icons/special.svg" alt="Entrada Specials">
+							<span class="sorting__title">
+								Entrada Specials
+							</span>
+						</button>
+						<button class="sorting__item" type="button">
+							<img class="sorting__icon" src="img/icons/timer.svg" alt="Few Seats Left">
+							<span class="sorting__title">
+								Few Seats Left
+							</span>
+						</button>
+						<button class="sorting__item" type="button">
+							<img class="sorting__icon" src="img/icons/chopper.svg" alt="Private Tours">
+							<span class="sorting__title">
+								Private Tours
+							</span>
+						</button>
+						<button class="sorting__item" type="button">
+							<img class="sorting__icon" src="img/icons/star-plus.svg" alt="New on Entrada">
+							<span class="sorting__title">
+								New on Entrada
+							</span>
+						</button>
+					</div>
+					<div class="page-tours__body">
+						<button type="button" class="page-tours__btn filter-btn">
+							<svg version="1.1" width="24" height="24" viewBox="0 0 24 24">
+								<path d="M19.845 4l-6.609 7.814c-0.147 0.173-0.236 0.399-0.236 0.646v6.922l-2-1v-5.922c0.001-0.227-0.077-0.457-0.236-0.646l-6.609-7.814zM22 2h-20c-0.552 0-1 0.448-1 1 0 0.247 0.089 0.473 0.236 0.646l7.764 9.18v6.174c0 0.389 0.222 0.727 0.553 0.894l4 2c0.494 0.247 1.095 0.047 1.342-0.447 0.072-0.146 0.106-0.301 0.105-0.447v-8.174l7.764-9.18c0.357-0.422 0.304-1.053-0.118-1.409-0.189-0.16-0.419-0.238-0.646-0.237z">
+								</path>
+							</svg>
+						</button>
+						<aside class="page-tours__aside aside-filter">
+							<form class="aside-filter__body">
+								<div class="aside-filter__item">
+									<h3 class="aside-filter__title">
+										When are you traveling?
+									</h3>
+									<div class="body-search__calendar aside-filter__calendar">
+										<input data-datepicker type="text" name="date" value="Select start date">
+									</div>
+								</div>
+								<div class="aside-filter__item">
+									<h3 class="aside-filter__title">
+										Popular Tags
+									</h3>
+									<ul class="aside-filter__list">
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_1" class="checkbox__input" type="checkbox" value="1" name="form[]">
+											<label for="c_1" class="checkbox__label"><span class="checkbox__text">Child
+													Friendly</span></label>
+										</li>
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_2" class="checkbox__input" type="checkbox" value="2" name="form[]">
+											<label for="c_2" class="checkbox__label"><span class="checkbox__text">Taking
+													extra precautions</span></label>
+										</li>
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_3" class="checkbox__input" type="checkbox" value="3" name="form[]">
+											<label for="c_3" class="checkbox__label"><span class="checkbox__text">Away
+													from the chaos</span></label>
+										</li>
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_4" class="checkbox__input" type="checkbox" value="4" name="form[]">
+											<label for="c_4" class="checkbox__label"><span class="checkbox__text">Epic
+													Challenges</span></label>
+										</li>
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_5" class="checkbox__input" type="checkbox" value="5" name="form[]">
+											<label for="c_5" class="checkbox__label"><span class="checkbox__text">Virtual Experiences</span></label>
+										</li>
+									</ul>
+								</div>
+								<div class="aside-filter__item">
+									<h3 class="aside-filter__title">
+										When are you traveling?
+									</h3>
+									<div class="aside-filter__price price-range">
+										<div id="range" class="price-range__range"></div>
+										<div class="price-range__body">
+											<input type="text" id="price-start" class="price-range__input price-range__from">
+											<input type="text" id="price-end" class="price-range__input price-range__to">
+										</div>
+									</div>
+								</div>
+								<div class="aside-filter__item">
+									<h3 class="aside-filter__title">
+										Duration
+									</h3>
+									<ul class="aside-filter__list">
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_6" class="checkbox__input" type="checkbox" value="6" name="form[]">
+											<label for="c_6" class="checkbox__label"><span class="checkbox__text">Upto 1
+													Hour</span></label>
+										</li>
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_7" class="checkbox__input" type="checkbox" value="7" name="form[]">
+											<label for="c_7" class="checkbox__label"><span class="checkbox__text">1 to 4
+													Hours</span></label>
+										</li>
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_8" class="checkbox__input" type="checkbox" value="8" name="form[]">
+											<label for="c_8" class="checkbox__label"><span class="checkbox__text">4
+													Hours to 1 Day</span></label>
+										</li>
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_9" class="checkbox__input" type="checkbox" value="9" name="form[]">
+											<label for="c_9" class="checkbox__label"><span class="checkbox__text">1 to 3
+													Days</span></label>
+										</li>
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_10" class="checkbox__input" type="checkbox" value="10" name="form[]">
+											<label for="c_10" class="checkbox__label"><span class="checkbox__text">3
+													Days
+													or More</span></label>
+										</li>
+									</ul>
+								</div>
+								<div class="aside-filter__item">
+									<h3 class="aside-filter__title">
+										Tour Rating
+									</h3>
+									<ul class="aside-filter__list">
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_11" class="checkbox__input" type="checkbox" value="11" name="form[]">
+											<label for="c_11" class="checkbox__label checkbox__label-stars">
+												<img src="img/icons/star-big-yellow.svg" alt="rating one star">
+												<img src="img/icons/star-big-gray.svg" alt="">
+												<img src="img/icons/star-big-gray.svg" alt="">
+												<img src="img/icons/star-big-gray.svg" alt="">
+												<img src="img/icons/star-big-gray.svg" alt="">
+											</label>
+										</li>
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_12" class="checkbox__input" type="checkbox" value="12" name="form[]">
+											<label for="c_12" class="checkbox__label">
+												<img src="img/icons/star-big-yellow.svg" alt="rating two star">
+												<img src="img/icons/star-big-yellow.svg" alt="">
+												<img src="img/icons/star-big-gray.svg" alt="">
+												<img src="img/icons/star-big-gray.svg" alt="">
+												<img src="img/icons/star-big-gray.svg" alt="">
+											</label>
+										</li>
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_13" class="checkbox__input" type="checkbox" value="13" name="form[]">
+											<label for="c_13" class="checkbox__label">
+												<img src="img/icons/star-big-yellow.svg" alt="rating three star">
+												<img src="img/icons/star-big-yellow.svg" alt="">
+												<img src="img/icons/star-big-yellow.svg" alt="">
+												<img src="img/icons/star-big-gray.svg" alt="">
+												<img src="img/icons/star-big-gray.svg" alt="">
+											</label>
+										</li>
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_14" class="checkbox__input" type="checkbox" value="14" name="form[]">
+											<label for="c_14" class="checkbox__label">
+												<img src="img/icons/star-big-yellow.svg" alt="rating four star">
+												<img src="img/icons/star-big-yellow.svg" alt="">
+												<img src="img/icons/star-big-yellow.svg" alt="">
+												<img src="img/icons/star-big-yellow.svg" alt="">
+												<img src="img/icons/star-big-gray.svg" alt="">
+											</label>
+										</li>
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_15" class="checkbox__input" type="checkbox" value="15" name="form[]">
+											<label for="c_15" class="checkbox__label">
+												<img src="img/icons/star-big-yellow.svg" alt="rating five star">
+												<img src="img/icons/star-big-yellow.svg" alt="">
+												<img src="img/icons/star-big-yellow.svg" alt="">
+												<img src="img/icons/star-big-yellow.svg" alt="">
+												<img src="img/icons/star-big-yellow.svg" alt="">
+											</label>
+										</li>
+									</ul>
+								</div>
+								<div class="aside-filter__item">
+									<h3 class="aside-filter__title">
+										Age Group
+									</h3>
+									<ul class="aside-filter__list">
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_16" class="checkbox__input" type="checkbox" value="16" name="form[]">
+											<label for="c_16" class="checkbox__label"><span class="checkbox__text">1 &
+													Up</span></label>
+										</li>
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_17" class="checkbox__input" type="checkbox" value="17" name="form[]">
+											<label for="c_17" class="checkbox__label"><span class="checkbox__text">3 &
+													Up</span></label>
+										</li>
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_18" class="checkbox__input" type="checkbox" value="18" name="form[]">
+											<label for="c_18" class="checkbox__label"><span class="checkbox__text">7 &
+													Up</span></label>
+										</li>
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_19" class="checkbox__input" type="checkbox" value="19" name="form[]">
+											<label for="c_19" class="checkbox__label"><span class="checkbox__text">13 &
+													Up</span></label>
+										</li>
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_20" class="checkbox__input" type="checkbox" value="20" name="form[]">
+											<label for="c_20" class="checkbox__label"><span class="checkbox__text">18 &
+													Up</span></label>
+										</li>
+									</ul>
+								</div>
+								<div class="aside-filter__item">
+									<h3 class="aside-filter__title">
+										Specials
+									</h3>
+									<ul class="aside-filter__list">
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_21" class="checkbox__input" type="checkbox" value="21" name="form[]">
+											<label for="c_21" class="checkbox__label"><span class="checkbox__text">Discounted deals</span></label>
+										</li>
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_22" class="checkbox__input" type="checkbox" value="22" name="form[]">
+											<label for="c_22" class="checkbox__label"><span class="checkbox__text">Free
+													Cancellations</span></label>
+										</li>
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_23" class="checkbox__input" type="checkbox" value="23" name="form[]">
+											<label for="c_23" class="checkbox__label"><span class="checkbox__text">Private Groups</span></label>
+										</li>
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_24" class="checkbox__input" type="checkbox" value="24" name="form[]">
+											<label for="c_24" class="checkbox__label"><span class="checkbox__text">New
+													on Entrada</span></label>
+										</li>
+										<li class="checkbox aside-filter__checkbox">
+											<input id="c_25" class="checkbox__input" type="checkbox" value="25" name="form[]">
+											<label for="c_25" class="checkbox__label"><span class="checkbox__text">Entrada Specials</span></label>
+										</li>
+									</ul>
+								</div>
+							</form>
+						</aside>
+						<div class="page-tours__items featured__items">
+							<div class="featured__item">
+								<div class="featured__item-img featured__item-ibg">
+									<picture><source srcset="img/tourspage/photo-1.webp" type="image/webp"><img src="img/tourspage/photo-1.jpg" alt="tours"></picture>
+									<div class="featured__item-sale">
+										30%
+									</div>
+								</div>
+								<div class="featured__item-info">
+									<h4 class="featured__item-title">
+										<a href="tour-detail.html">
+											Tetema Tour
+										</a>
+										<button type="button" class="featured__item-like">
+											<svg width="28" height="24" viewBox="0 0 28 24">
+												<path d="M20.7022 0C19.8086 0 17.1581 -2.8257e-07 14.0001 4.03022C12.8679 2.54874 10.5441 0 7.2979 0C3.27661 0 0 3.25926 0 7.25926C0 8.20717 0.179189 9.12616 0.536411 10.015C1.19149 11.6146 4.82519 15.2002 9.47262 19.7036C11.2599 21.4224 12.7796 22.9327 13.5532 23.7928C13.6719 23.9109 13.8208 24 14 24C14.1792 24 14.3281 23.941 14.4468 23.7928C15.2218 22.934 16.7705 21.4225 18.5274 19.7036C23.1748 15.2002 26.7782 11.6145 27.4636 9.98483C27.8208 9.12604 28 8.17695 28 7.22903C28 3.25926 24.7234 0 20.7021 0H20.7022ZM26.3618 9.54044C25.7358 11.052 21.0897 15.5556 17.7235 18.8435C16.2038 20.2949 14.8937 21.5993 14.0304 22.517C13.1671 21.598 11.8267 20.3249 10.3374 18.8435C6.94224 15.5541 2.29482 11.0507 1.69907 9.54044C1.3407 8.82981 1.19176 8.05896 1.19176 7.2592C1.19176 3.91075 3.93196 1.18513 7.29817 1.18513C10.1582 1.18513 12.2131 3.5856 13.5231 5.39224C13.6418 5.54038 13.821 5.6295 14.0002 5.6295C14.1794 5.6295 14.3877 5.54038 14.4773 5.39224C15.7584 3.58435 17.8132 1.18513 20.7022 1.18513C24.0685 1.18513 26.8087 3.91081 26.8087 7.2592C26.8087 8.05896 26.6597 8.82981 26.3618 9.54044H26.3618Z" fill="#546179" />
+											</svg>
+										</button>
+									</h4>
+									<div class="featured__item-hesh">
+										Manyara | Lake Eyasi | Ngorongoro | Serengeti visit Village
+									</div>
+									<div class="featured__item-blockrice">
+										<div class="featured__item-price">
+											$2,080
+										</div>
+										<div class="featured__item-rating">
+											<div class="rating rating_set">
+												<div class="rating__body">
+													<div class="rating__active"></div>
+													<div class="rating__items">
+														<input type="radio" class="rating__item" value="1" name="rating">
+														<input type="radio" class="rating__item" value="2" name="rating">
+														<input type="radio" class="rating__item" value="3" name="rating">
+														<input type="radio" class="rating__item" value="4" name="rating">
+														<input type="radio" class="rating__item" value="5" name="rating">
+													</div>
+												</div>
+												<div class="rating__value">4.7</div>
+												<div class="rating__quantity">(108)</div>
+											</div>
+										</div>
+									</div>
+									<div class="featured__item-days">
+										<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M9 0C7.21997 0 5.47991 0.527841 3.99987 1.51677C2.51983 2.50571 1.36628 3.91131 0.685088 5.55585C0.00389966 7.20038 -0.17433 9.00998 0.172936 10.7558C0.520203 12.5016 1.37737 14.1053 2.63604 15.364C3.89471 16.6226 5.49836 17.4798 7.24419 17.8271C8.99002 18.1743 10.7996 17.9961 12.4442 17.3149C14.0887 16.6337 15.4943 15.4802 16.4832 14.0001C17.4722 12.5201 18 10.78 18 9C18 6.61305 17.0518 4.32387 15.364 2.63604C13.6761 0.948211 11.3869 0 9 0ZM9 16.8C7.45731 16.8 5.94926 16.3425 4.66655 15.4855C3.38385 14.6284 2.38411 13.4102 1.79374 11.9849C1.20338 10.5597 1.04891 8.99134 1.34988 7.47829C1.65084 5.96524 2.39372 4.57542 3.48457 3.48457C4.57542 2.39372 5.96525 1.65084 7.4783 1.34987C8.99135 1.04891 10.5597 1.20338 11.9849 1.79374C13.4102 2.3841 14.6284 3.38385 15.4855 4.66655C16.3425 5.94925 16.8 7.4573 16.8 9C16.8 11.0687 15.9782 13.0526 14.5154 14.5154C13.0527 15.9782 11.0687 16.8 9 16.8Z" fill="#28B0A6" />
+											<path d="M9.6 3C9.6 2.84087 9.53678 2.68826 9.42426 2.57574C9.31174 2.46321 9.15913 2.4 9 2.4C8.84087 2.4 8.68826 2.46321 8.57573 2.57574C8.46321 2.68826 8.4 2.84087 8.4 3V9C8.4 9.15913 8.46321 9.31174 8.57573 9.42426C8.68826 9.53678 8.84087 9.6 9 9.6H15C15.1591 9.6 15.3117 9.53678 15.4243 9.42426C15.5368 9.31174 15.6 9.15913 15.6 9C15.6 8.84087 15.5368 8.68826 15.4243 8.57573C15.3117 8.46321 15.1591 8.4 15 8.4H9.6V3Z" fill="#28B0A6" />
+										</svg>
+										8 Days
+									</div>
+									<div class="featured__item-cancellation">
+										<svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M1 3L5 7L11 1" stroke="#28B0A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+										Free Cancellation
+									</div>
+								</div>
+							</div>
+							<div class="featured__item">
+								<div class="featured__item-img featured__item-ibg">
+									<picture><source srcset="img/tourspage/photo-2.webp" type="image/webp"><img src="img/tourspage/photo-2.jpg" alt="tours"></picture>
+								</div>
+								<div class="featured__item-info">
+									<h4 class="featured__item-title">
+										<a href="tour-detail.html">
+											Pamoja Tour
+										</a>
+										<button type="button" class="featured__item-like">
+											<svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M20.7022 0C19.8086 0 17.1581 -2.8257e-07 14.0001 4.03022C12.8679 2.54874 10.5441 0 7.2979 0C3.27661 0 0 3.25926 0 7.25926C0 8.20717 0.179189 9.12616 0.536411 10.015C1.19149 11.6146 4.82519 15.2002 9.47262 19.7036C11.2599 21.4224 12.7796 22.9327 13.5532 23.7928C13.6719 23.9109 13.8208 24 14 24C14.1792 24 14.3281 23.941 14.4468 23.7928C15.2218 22.934 16.7705 21.4225 18.5274 19.7036C23.1748 15.2002 26.7782 11.6145 27.4636 9.98483C27.8208 9.12604 28 8.17695 28 7.22903C28 3.25926 24.7234 0 20.7021 0H20.7022ZM26.3618 9.54044C25.7358 11.052 21.0897 15.5556 17.7235 18.8435C16.2038 20.2949 14.8937 21.5993 14.0304 22.517C13.1671 21.598 11.8267 20.3249 10.3374 18.8435C6.94224 15.5541 2.29482 11.0507 1.69907 9.54044C1.3407 8.82981 1.19176 8.05896 1.19176 7.2592C1.19176 3.91075 3.93196 1.18513 7.29817 1.18513C10.1582 1.18513 12.2131 3.5856 13.5231 5.39224C13.6418 5.54038 13.821 5.6295 14.0002 5.6295C14.1794 5.6295 14.3877 5.54038 14.4773 5.39224C15.7584 3.58435 17.8132 1.18513 20.7022 1.18513C24.0685 1.18513 26.8087 3.91081 26.8087 7.2592C26.8087 8.05896 26.6597 8.82981 26.3618 9.54044H26.3618Z" fill="#546179" />
+											</svg>
+										</button>
+									</h4>
+									<div class="featured__item-hesh">
+										Manyara | Lake Eyasi | Ngorongoro
+									</div>
+									<div class="featured__item-blockrice">
+										<div class="featured__item-price">
+											$1,880
+										</div>
+										<div class="featured__item-rating">
+											<div class="rating rating_set">
+												<div class="rating__body">
+													<div class="rating__active"></div>
+													<div class="rating__items">
+														<input type="radio" class="rating__item" value="1" name="rating">
+														<input type="radio" class="rating__item" value="2" name="rating">
+														<input type="radio" class="rating__item" value="3" name="rating">
+														<input type="radio" class="rating__item" value="4" name="rating">
+														<input type="radio" class="rating__item" value="5" name="rating">
+													</div>
+												</div>
+												<div class="rating__value">4.7</div>
+												<div class="rating__quantity">(108)</div>
+											</div>
+										</div>
+									</div>
+									<div class="featured__item-days">
+										<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M9 0C7.21997 0 5.47991 0.527841 3.99987 1.51677C2.51983 2.50571 1.36628 3.91131 0.685088 5.55585C0.00389966 7.20038 -0.17433 9.00998 0.172936 10.7558C0.520203 12.5016 1.37737 14.1053 2.63604 15.364C3.89471 16.6226 5.49836 17.4798 7.24419 17.8271C8.99002 18.1743 10.7996 17.9961 12.4442 17.3149C14.0887 16.6337 15.4943 15.4802 16.4832 14.0001C17.4722 12.5201 18 10.78 18 9C18 6.61305 17.0518 4.32387 15.364 2.63604C13.6761 0.948211 11.3869 0 9 0ZM9 16.8C7.45731 16.8 5.94926 16.3425 4.66655 15.4855C3.38385 14.6284 2.38411 13.4102 1.79374 11.9849C1.20338 10.5597 1.04891 8.99134 1.34988 7.47829C1.65084 5.96524 2.39372 4.57542 3.48457 3.48457C4.57542 2.39372 5.96525 1.65084 7.4783 1.34987C8.99135 1.04891 10.5597 1.20338 11.9849 1.79374C13.4102 2.3841 14.6284 3.38385 15.4855 4.66655C16.3425 5.94925 16.8 7.4573 16.8 9C16.8 11.0687 15.9782 13.0526 14.5154 14.5154C13.0527 15.9782 11.0687 16.8 9 16.8Z" fill="#28B0A6" />
+											<path d="M9.6 3C9.6 2.84087 9.53678 2.68826 9.42426 2.57574C9.31174 2.46321 9.15913 2.4 9 2.4C8.84087 2.4 8.68826 2.46321 8.57573 2.57574C8.46321 2.68826 8.4 2.84087 8.4 3V9C8.4 9.15913 8.46321 9.31174 8.57573 9.42426C8.68826 9.53678 8.84087 9.6 9 9.6H15C15.1591 9.6 15.3117 9.53678 15.4243 9.42426C15.5368 9.31174 15.6 9.15913 15.6 9C15.6 8.84087 15.5368 8.68826 15.4243 8.57573C15.3117 8.46321 15.1591 8.4 15 8.4H9.6V3Z" fill="#28B0A6" />
+										</svg>
+										7 Days
+									</div>
+									<div class="featured__item-cancellation">
+										<svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M1 3L5 7L11 1" stroke="#28B0A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+										Free Cancellation
+									</div>
+								</div>
+							</div>
+							<div class="featured__item">
+								<div class="featured__item-img featured__item-ibg">
+									<picture><source srcset="img/tourspage/photo-3.webp" type="image/webp"><img src="img/tourspage/photo-3.jpg" alt="tours"></picture>
+									<div class="featured__item-sale">
+										30%
+									</div>
+								</div>
+								<div class="featured__item-info">
+									<h4 class="featured__item-title">
+										<a href="tour-detail.html">
+											Rose Tour
+										</a>
+										<button type="button" class="featured__item-like">
+											<svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M20.7022 0C19.8086 0 17.1581 -2.8257e-07 14.0001 4.03022C12.8679 2.54874 10.5441 0 7.2979 0C3.27661 0 0 3.25926 0 7.25926C0 8.20717 0.179189 9.12616 0.536411 10.015C1.19149 11.6146 4.82519 15.2002 9.47262 19.7036C11.2599 21.4224 12.7796 22.9327 13.5532 23.7928C13.6719 23.9109 13.8208 24 14 24C14.1792 24 14.3281 23.941 14.4468 23.7928C15.2218 22.934 16.7705 21.4225 18.5274 19.7036C23.1748 15.2002 26.7782 11.6145 27.4636 9.98483C27.8208 9.12604 28 8.17695 28 7.22903C28 3.25926 24.7234 0 20.7021 0H20.7022ZM26.3618 9.54044C25.7358 11.052 21.0897 15.5556 17.7235 18.8435C16.2038 20.2949 14.8937 21.5993 14.0304 22.517C13.1671 21.598 11.8267 20.3249 10.3374 18.8435C6.94224 15.5541 2.29482 11.0507 1.69907 9.54044C1.3407 8.82981 1.19176 8.05896 1.19176 7.2592C1.19176 3.91075 3.93196 1.18513 7.29817 1.18513C10.1582 1.18513 12.2131 3.5856 13.5231 5.39224C13.6418 5.54038 13.821 5.6295 14.0002 5.6295C14.1794 5.6295 14.3877 5.54038 14.4773 5.39224C15.7584 3.58435 17.8132 1.18513 20.7022 1.18513C24.0685 1.18513 26.8087 3.91081 26.8087 7.2592C26.8087 8.05896 26.6597 8.82981 26.3618 9.54044H26.3618Z" fill="#546179" />
+											</svg>
+										</button>
+									</h4>
+									<div class="featured__item-hesh">
+										Tarangire | Lake Manyara | Serengeti Ngorongoro Crater
+									</div>
+									<div class="featured__item-blockrice">
+										<div class="featured__item-price">
+											$1,560
+										</div>
+										<div class="featured__item-rating">
+											<div class="rating rating_set">
+												<div class="rating__body">
+													<div class="rating__active"></div>
+													<div class="rating__items">
+														<input type="radio" class="rating__item" value="1" name="rating">
+														<input type="radio" class="rating__item" value="2" name="rating">
+														<input type="radio" class="rating__item" value="3" name="rating">
+														<input type="radio" class="rating__item" value="4" name="rating">
+														<input type="radio" class="rating__item" value="5" name="rating">
+													</div>
+												</div>
+												<div class="rating__value">4.7</div>
+												<div class="rating__quantity">(108)</div>
+											</div>
+										</div>
+									</div>
+									<div class="featured__item-days">
+										<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M9 0C7.21997 0 5.47991 0.527841 3.99987 1.51677C2.51983 2.50571 1.36628 3.91131 0.685088 5.55585C0.00389966 7.20038 -0.17433 9.00998 0.172936 10.7558C0.520203 12.5016 1.37737 14.1053 2.63604 15.364C3.89471 16.6226 5.49836 17.4798 7.24419 17.8271C8.99002 18.1743 10.7996 17.9961 12.4442 17.3149C14.0887 16.6337 15.4943 15.4802 16.4832 14.0001C17.4722 12.5201 18 10.78 18 9C18 6.61305 17.0518 4.32387 15.364 2.63604C13.6761 0.948211 11.3869 0 9 0ZM9 16.8C7.45731 16.8 5.94926 16.3425 4.66655 15.4855C3.38385 14.6284 2.38411 13.4102 1.79374 11.9849C1.20338 10.5597 1.04891 8.99134 1.34988 7.47829C1.65084 5.96524 2.39372 4.57542 3.48457 3.48457C4.57542 2.39372 5.96525 1.65084 7.4783 1.34987C8.99135 1.04891 10.5597 1.20338 11.9849 1.79374C13.4102 2.3841 14.6284 3.38385 15.4855 4.66655C16.3425 5.94925 16.8 7.4573 16.8 9C16.8 11.0687 15.9782 13.0526 14.5154 14.5154C13.0527 15.9782 11.0687 16.8 9 16.8Z" fill="#28B0A6" />
+											<path d="M9.6 3C9.6 2.84087 9.53678 2.68826 9.42426 2.57574C9.31174 2.46321 9.15913 2.4 9 2.4C8.84087 2.4 8.68826 2.46321 8.57573 2.57574C8.46321 2.68826 8.4 2.84087 8.4 3V9C8.4 9.15913 8.46321 9.31174 8.57573 9.42426C8.68826 9.53678 8.84087 9.6 9 9.6H15C15.1591 9.6 15.3117 9.53678 15.4243 9.42426C15.5368 9.31174 15.6 9.15913 15.6 9C15.6 8.84087 15.5368 8.68826 15.4243 8.57573C15.3117 8.46321 15.1591 8.4 15 8.4H9.6V3Z" fill="#28B0A6" />
+										</svg>
+										6 Days
+									</div>
+									<div class="featured__item-cancellation">
+										<svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M1 3L5 7L11 1" stroke="#28B0A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+										Free Cancellation
+									</div>
+								</div>
+							</div>
+							<div class="featured__item">
+								<div class="featured__item-img featured__item-ibg">
+									<picture><source srcset="img/tourspage/photo-4.webp" type="image/webp"><img src="img/tourspage/photo-4.jpg" alt="tours"></picture>
+								</div>
+								<div class="featured__item-info">
+									<h4 class="featured__item-title">
+										<a href="tour-detail.html">
+											Ansi Tour
+										</a>
+										<button type="button" class="featured__item-like">
+											<svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M20.7022 0C19.8086 0 17.1581 -2.8257e-07 14.0001 4.03022C12.8679 2.54874 10.5441 0 7.2979 0C3.27661 0 0 3.25926 0 7.25926C0 8.20717 0.179189 9.12616 0.536411 10.015C1.19149 11.6146 4.82519 15.2002 9.47262 19.7036C11.2599 21.4224 12.7796 22.9327 13.5532 23.7928C13.6719 23.9109 13.8208 24 14 24C14.1792 24 14.3281 23.941 14.4468 23.7928C15.2218 22.934 16.7705 21.4225 18.5274 19.7036C23.1748 15.2002 26.7782 11.6145 27.4636 9.98483C27.8208 9.12604 28 8.17695 28 7.22903C28 3.25926 24.7234 0 20.7021 0H20.7022ZM26.3618 9.54044C25.7358 11.052 21.0897 15.5556 17.7235 18.8435C16.2038 20.2949 14.8937 21.5993 14.0304 22.517C13.1671 21.598 11.8267 20.3249 10.3374 18.8435C6.94224 15.5541 2.29482 11.0507 1.69907 9.54044C1.3407 8.82981 1.19176 8.05896 1.19176 7.2592C1.19176 3.91075 3.93196 1.18513 7.29817 1.18513C10.1582 1.18513 12.2131 3.5856 13.5231 5.39224C13.6418 5.54038 13.821 5.6295 14.0002 5.6295C14.1794 5.6295 14.3877 5.54038 14.4773 5.39224C15.7584 3.58435 17.8132 1.18513 20.7022 1.18513C24.0685 1.18513 26.8087 3.91081 26.8087 7.2592C26.8087 8.05896 26.6597 8.82981 26.3618 9.54044H26.3618Z" fill="#546179" />
+											</svg>
+										</button>
+									</h4>
+									<div class="featured__item-hesh">
+										Lake Manyara | Serengeti | Ngorongoro Crater
+									</div>
+									<div class="featured__item-blockrice">
+										<div class="featured__item-price">
+											$1,300
+										</div>
+										<div class="featured__item-rating">
+											<div class="rating rating_set">
+												<div class="rating__body">
+													<div class="rating__active"></div>
+													<div class="rating__items">
+														<input type="radio" class="rating__item" value="1" name="rating">
+														<input type="radio" class="rating__item" value="2" name="rating">
+														<input type="radio" class="rating__item" value="3" name="rating">
+														<input type="radio" class="rating__item" value="4" name="rating">
+														<input type="radio" class="rating__item" value="5" name="rating">
+													</div>
+												</div>
+												<div class="rating__value">4.7</div>
+												<div class="rating__quantity">(108)</div>
+											</div>
+										</div>
+									</div>
+									<div class="featured__item-days">
+										<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M9 0C7.21997 0 5.47991 0.527841 3.99987 1.51677C2.51983 2.50571 1.36628 3.91131 0.685088 5.55585C0.00389966 7.20038 -0.17433 9.00998 0.172936 10.7558C0.520203 12.5016 1.37737 14.1053 2.63604 15.364C3.89471 16.6226 5.49836 17.4798 7.24419 17.8271C8.99002 18.1743 10.7996 17.9961 12.4442 17.3149C14.0887 16.6337 15.4943 15.4802 16.4832 14.0001C17.4722 12.5201 18 10.78 18 9C18 6.61305 17.0518 4.32387 15.364 2.63604C13.6761 0.948211 11.3869 0 9 0ZM9 16.8C7.45731 16.8 5.94926 16.3425 4.66655 15.4855C3.38385 14.6284 2.38411 13.4102 1.79374 11.9849C1.20338 10.5597 1.04891 8.99134 1.34988 7.47829C1.65084 5.96524 2.39372 4.57542 3.48457 3.48457C4.57542 2.39372 5.96525 1.65084 7.4783 1.34987C8.99135 1.04891 10.5597 1.20338 11.9849 1.79374C13.4102 2.3841 14.6284 3.38385 15.4855 4.66655C16.3425 5.94925 16.8 7.4573 16.8 9C16.8 11.0687 15.9782 13.0526 14.5154 14.5154C13.0527 15.9782 11.0687 16.8 9 16.8Z" fill="#28B0A6" />
+											<path d="M9.6 3C9.6 2.84087 9.53678 2.68826 9.42426 2.57574C9.31174 2.46321 9.15913 2.4 9 2.4C8.84087 2.4 8.68826 2.46321 8.57573 2.57574C8.46321 2.68826 8.4 2.84087 8.4 3V9C8.4 9.15913 8.46321 9.31174 8.57573 9.42426C8.68826 9.53678 8.84087 9.6 9 9.6H15C15.1591 9.6 15.3117 9.53678 15.4243 9.42426C15.5368 9.31174 15.6 9.15913 15.6 9C15.6 8.84087 15.5368 8.68826 15.4243 8.57573C15.3117 8.46321 15.1591 8.4 15 8.4H9.6V3Z" fill="#28B0A6" />
+										</svg>
+										5 Days
+									</div>
+									<div class="featured__item-cancellation">
+										<svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M1 3L5 7L11 1" stroke="#28B0A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+										Free Cancellation
+									</div>
+								</div>
+							</div>
+							<div class="featured__item">
+								<div class="featured__item-img featured__item-ibg">
+									<picture><source srcset="img/tourspage/photo-5.webp" type="image/webp"><img src="img/tourspage/photo-5.jpg" alt="tours"></picture>
+								</div>
+								<div class="featured__item-info">
+									<h4 class="featured__item-title">
+										<a href="tour-detail.html">
+											Lina Tour
+										</a>
+										<button type="button" class="featured__item-like">
+											<svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M20.7022 0C19.8086 0 17.1581 -2.8257e-07 14.0001 4.03022C12.8679 2.54874 10.5441 0 7.2979 0C3.27661 0 0 3.25926 0 7.25926C0 8.20717 0.179189 9.12616 0.536411 10.015C1.19149 11.6146 4.82519 15.2002 9.47262 19.7036C11.2599 21.4224 12.7796 22.9327 13.5532 23.7928C13.6719 23.9109 13.8208 24 14 24C14.1792 24 14.3281 23.941 14.4468 23.7928C15.2218 22.934 16.7705 21.4225 18.5274 19.7036C23.1748 15.2002 26.7782 11.6145 27.4636 9.98483C27.8208 9.12604 28 8.17695 28 7.22903C28 3.25926 24.7234 0 20.7021 0H20.7022ZM26.3618 9.54044C25.7358 11.052 21.0897 15.5556 17.7235 18.8435C16.2038 20.2949 14.8937 21.5993 14.0304 22.517C13.1671 21.598 11.8267 20.3249 10.3374 18.8435C6.94224 15.5541 2.29482 11.0507 1.69907 9.54044C1.3407 8.82981 1.19176 8.05896 1.19176 7.2592C1.19176 3.91075 3.93196 1.18513 7.29817 1.18513C10.1582 1.18513 12.2131 3.5856 13.5231 5.39224C13.6418 5.54038 13.821 5.6295 14.0002 5.6295C14.1794 5.6295 14.3877 5.54038 14.4773 5.39224C15.7584 3.58435 17.8132 1.18513 20.7022 1.18513C24.0685 1.18513 26.8087 3.91081 26.8087 7.2592C26.8087 8.05896 26.6597 8.82981 26.3618 9.54044H26.3618Z" fill="#546179" />
+											</svg>
+										</button>
+									</h4>
+									<div class="featured__item-hesh">
+										Lake Manyara | Serengeti | Ngorongoro Crater
+									</div>
+									<div class="featured__item-blockrice">
+										<div class="featured__item-price">
+											$1,040
+										</div>
+										<div class="featured__item-rating">
+											<div class="rating rating_set">
+												<div class="rating__body">
+													<div class="rating__active"></div>
+													<div class="rating__items">
+														<input type="radio" class="rating__item" value="1" name="rating">
+														<input type="radio" class="rating__item" value="2" name="rating">
+														<input type="radio" class="rating__item" value="3" name="rating">
+														<input type="radio" class="rating__item" value="4" name="rating">
+														<input type="radio" class="rating__item" value="5" name="rating">
+													</div>
+												</div>
+												<div class="rating__value">4.7</div>
+												<div class="rating__quantity">(108)</div>
+											</div>
+										</div>
+									</div>
+									<div class="featured__item-days">
+										<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M9 0C7.21997 0 5.47991 0.527841 3.99987 1.51677C2.51983 2.50571 1.36628 3.91131 0.685088 5.55585C0.00389966 7.20038 -0.17433 9.00998 0.172936 10.7558C0.520203 12.5016 1.37737 14.1053 2.63604 15.364C3.89471 16.6226 5.49836 17.4798 7.24419 17.8271C8.99002 18.1743 10.7996 17.9961 12.4442 17.3149C14.0887 16.6337 15.4943 15.4802 16.4832 14.0001C17.4722 12.5201 18 10.78 18 9C18 6.61305 17.0518 4.32387 15.364 2.63604C13.6761 0.948211 11.3869 0 9 0ZM9 16.8C7.45731 16.8 5.94926 16.3425 4.66655 15.4855C3.38385 14.6284 2.38411 13.4102 1.79374 11.9849C1.20338 10.5597 1.04891 8.99134 1.34988 7.47829C1.65084 5.96524 2.39372 4.57542 3.48457 3.48457C4.57542 2.39372 5.96525 1.65084 7.4783 1.34987C8.99135 1.04891 10.5597 1.20338 11.9849 1.79374C13.4102 2.3841 14.6284 3.38385 15.4855 4.66655C16.3425 5.94925 16.8 7.4573 16.8 9C16.8 11.0687 15.9782 13.0526 14.5154 14.5154C13.0527 15.9782 11.0687 16.8 9 16.8Z" fill="#28B0A6" />
+											<path d="M9.6 3C9.6 2.84087 9.53678 2.68826 9.42426 2.57574C9.31174 2.46321 9.15913 2.4 9 2.4C8.84087 2.4 8.68826 2.46321 8.57573 2.57574C8.46321 2.68826 8.4 2.84087 8.4 3V9C8.4 9.15913 8.46321 9.31174 8.57573 9.42426C8.68826 9.53678 8.84087 9.6 9 9.6H15C15.1591 9.6 15.3117 9.53678 15.4243 9.42426C15.5368 9.31174 15.6 9.15913 15.6 9C15.6 8.84087 15.5368 8.68826 15.4243 8.57573C15.3117 8.46321 15.1591 8.4 15 8.4H9.6V3Z" fill="#28B0A6" />
+										</svg>
+										4 Days
+									</div>
+									<div class="featured__item-cancellation">
+										<svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M1 3L5 7L11 1" stroke="#28B0A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+										Free Cancellation
+									</div>
+								</div>
+							</div>
+							<div class="featured__item">
+								<div class="featured__item-img featured__item-ibg">
+									<picture><source srcset="img/tourspage/photo-6.webp" type="image/webp"><img src="img/tourspage/photo-6.jpg" alt="tours"></picture>
+									<div class="featured__item-sale">
+										30%
+									</div>
+								</div>
+								<div class="featured__item-info">
+									<h4 class="featured__item-title">
+										<a href="tour-detail.html">
+											Sharma Tour
+										</a>
+										<button type="button" class="featured__item-like">
+											<svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M20.7022 0C19.8086 0 17.1581 -2.8257e-07 14.0001 4.03022C12.8679 2.54874 10.5441 0 7.2979 0C3.27661 0 0 3.25926 0 7.25926C0 8.20717 0.179189 9.12616 0.536411 10.015C1.19149 11.6146 4.82519 15.2002 9.47262 19.7036C11.2599 21.4224 12.7796 22.9327 13.5532 23.7928C13.6719 23.9109 13.8208 24 14 24C14.1792 24 14.3281 23.941 14.4468 23.7928C15.2218 22.934 16.7705 21.4225 18.5274 19.7036C23.1748 15.2002 26.7782 11.6145 27.4636 9.98483C27.8208 9.12604 28 8.17695 28 7.22903C28 3.25926 24.7234 0 20.7021 0H20.7022ZM26.3618 9.54044C25.7358 11.052 21.0897 15.5556 17.7235 18.8435C16.2038 20.2949 14.8937 21.5993 14.0304 22.517C13.1671 21.598 11.8267 20.3249 10.3374 18.8435C6.94224 15.5541 2.29482 11.0507 1.69907 9.54044C1.3407 8.82981 1.19176 8.05896 1.19176 7.2592C1.19176 3.91075 3.93196 1.18513 7.29817 1.18513C10.1582 1.18513 12.2131 3.5856 13.5231 5.39224C13.6418 5.54038 13.821 5.6295 14.0002 5.6295C14.1794 5.6295 14.3877 5.54038 14.4773 5.39224C15.7584 3.58435 17.8132 1.18513 20.7022 1.18513C24.0685 1.18513 26.8087 3.91081 26.8087 7.2592C26.8087 8.05896 26.6597 8.82981 26.3618 9.54044H26.3618Z" fill="#546179" />
+											</svg>
+										</button>
+									</h4>
+									<div class="featured__item-hesh">
+										Tarangire | Ngorongoro Crater | Lake Manyara
+									</div>
+									<div class="featured__item-blockrice">
+										<div class="featured__item-price">
+											$750
+										</div>
+										<div class="featured__item-rating">
+											<div class="rating rating_set">
+												<div class="rating__body">
+													<div class="rating__active"></div>
+													<div class="rating__items">
+														<input type="radio" class="rating__item" value="1" name="rating">
+														<input type="radio" class="rating__item" value="2" name="rating">
+														<input type="radio" class="rating__item" value="3" name="rating">
+														<input type="radio" class="rating__item" value="4" name="rating">
+														<input type="radio" class="rating__item" value="5" name="rating">
+													</div>
+												</div>
+												<div class="rating__value">4.7</div>
+												<div class="rating__quantity">(108)</div>
+											</div>
+										</div>
+									</div>
+									<div class="featured__item-days">
+										<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M9 0C7.21997 0 5.47991 0.527841 3.99987 1.51677C2.51983 2.50571 1.36628 3.91131 0.685088 5.55585C0.00389966 7.20038 -0.17433 9.00998 0.172936 10.7558C0.520203 12.5016 1.37737 14.1053 2.63604 15.364C3.89471 16.6226 5.49836 17.4798 7.24419 17.8271C8.99002 18.1743 10.7996 17.9961 12.4442 17.3149C14.0887 16.6337 15.4943 15.4802 16.4832 14.0001C17.4722 12.5201 18 10.78 18 9C18 6.61305 17.0518 4.32387 15.364 2.63604C13.6761 0.948211 11.3869 0 9 0ZM9 16.8C7.45731 16.8 5.94926 16.3425 4.66655 15.4855C3.38385 14.6284 2.38411 13.4102 1.79374 11.9849C1.20338 10.5597 1.04891 8.99134 1.34988 7.47829C1.65084 5.96524 2.39372 4.57542 3.48457 3.48457C4.57542 2.39372 5.96525 1.65084 7.4783 1.34987C8.99135 1.04891 10.5597 1.20338 11.9849 1.79374C13.4102 2.3841 14.6284 3.38385 15.4855 4.66655C16.3425 5.94925 16.8 7.4573 16.8 9C16.8 11.0687 15.9782 13.0526 14.5154 14.5154C13.0527 15.9782 11.0687 16.8 9 16.8Z" fill="#28B0A6" />
+											<path d="M9.6 3C9.6 2.84087 9.53678 2.68826 9.42426 2.57574C9.31174 2.46321 9.15913 2.4 9 2.4C8.84087 2.4 8.68826 2.46321 8.57573 2.57574C8.46321 2.68826 8.4 2.84087 8.4 3V9C8.4 9.15913 8.46321 9.31174 8.57573 9.42426C8.68826 9.53678 8.84087 9.6 9 9.6H15C15.1591 9.6 15.3117 9.53678 15.4243 9.42426C15.5368 9.31174 15.6 9.15913 15.6 9C15.6 8.84087 15.5368 8.68826 15.4243 8.57573C15.3117 8.46321 15.1591 8.4 15 8.4H9.6V3Z" fill="#28B0A6" />
+										</svg>
+										3 Days
+									</div>
+									<div class="featured__item-cancellation">
+										<svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M1 3L5 7L11 1" stroke="#28B0A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+										Free Cancellation
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<section class="page-tours__viewed viewed">
+				<div class="viewed__container">
+					<div class="viewed__head">
+						<div class="viewed__head-info">
+							<h3 class="viewed__title title">
+								Recently Viewed
+							</h3>
+							<p class="viewed__text text">
+								Sost Brilliant reasons Entrada should be your one-stop-shop!
+							</p>
+						</div>
+						<div class="viewed__head-navigation">
+							<button type="button" class="swiper-button-prev button-prev">
+								<svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M10.461 18.34L1.99805 9.87704L10.461 1.41504" stroke="#546179" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</button>
+							<button type="button" class="swiper-button-next button-next">
+								<svg width="11" height="19" viewBox="0 0 11 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M1 17.925L9.463 9.463L1 1" stroke="#546179" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</button>
+						</div>
+					</div>
+					<div class="viewed__slider swiper">
+						<div class="viewed__wrapper swiper-wrapper">
+							<div class="viewed__slide swiper-slide">
+								<div class="viewed__slide-img viewed__slide-ibg">
+									<picture><source srcset="img/recently-viewed/photo-1.webp" type="image/webp"><img src="img/recently-viewed/photo-1.jpg" alt="tours"></picture>
+									<div class="viewed__slide-sale">
+										30%
+									</div>
+									<div class="viewed__slide-block">
+										<div class="viewed__slide-days">
+											10 Days | 09 Night
+										</div>
+										<div class="viewed__slide-info">
+											<div class="viewed__slide-price">
+												$895.50
+											</div>
+											<div class="viewed__slide-links">
+												<button type="button" class="viewed__slide-share"></button>
+												<a href="" class="viewed__slide-link">Explore</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="viewed__slide-body">
+									<h3 class="viewed__slide-title">
+										<a href="">
+											Train Tour Skyline
+										</a>
+									</h3>
+									<p class="viewed__slide-text">
+										Check Out Daily Deals and Promotion on Hotels.
+										Easy & Fast Booking
+									</p>
+								</div>
+							</div>
+							<div class="viewed__slide swiper-slide">
+								<div class="viewed__slide-img viewed__slide-ibg">
+									<picture><source srcset="img/recently-viewed/photo-2.webp" type="image/webp"><img src="img/recently-viewed/photo-2.jpg" alt="tours"></picture>
+									<div class="viewed__slide-sale">
+										30%
+									</div>
+									<div class="viewed__slide-block">
+										<div class="viewed__slide-days">
+											07 Days | 06 Night
+										</div>
+										<div class="viewed__slide-info">
+											<div class="viewed__slide-price">
+												$1895
+											</div>
+											<div class="viewed__slide-links">
+												<button type="button" class="viewed__slide-share"></button>
+												<a href="" class="viewed__slide-link">Explore</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="viewed__slide-body">
+									<h3 class="viewed__slide-title">
+										<a href="">
+											Sea Nature Views
+										</a>
+									</h3>
+									<p class="viewed__slide-text">
+										Check Out Daily Deals and Promotion on Hotels.
+										Easy & Fast Booking
+									</p>
+								</div>
+							</div>
+							<div class="viewed__slide swiper-slide">
+								<div class="viewed__slide-img viewed__slide-ibg">
+									<picture><source srcset="img/recently-viewed/photo-3.webp" type="image/webp"><img src="img/recently-viewed/photo-3.jpg" alt="tours"></picture>
+									<div class="viewed__slide-sale">
+										30%
+									</div>
+									<div class="viewed__slide-block">
+										<div class="viewed__slide-days">
+											11 Days | 10 Night
+										</div>
+										<div class="viewed__slide-info">
+											<div class="viewed__slide-price">
+												$995.50
+											</div>
+											<div class="viewed__slide-links">
+												<button type="button" class="viewed__slide-share"></button>
+												<a href="" class="viewed__slide-link">Explore</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="viewed__slide-body">
+									<h3 class="viewed__slide-title">
+										<a href="">
+											Trilogy Market Ptr
+										</a>
+									</h3>
+									<p class="viewed__slide-text">
+										Check Out Daily Deals and Promotion on Hotels.
+										Easy & Fast Booking
+									</p>
+								</div>
+							</div>
+							<div class="viewed__slide swiper-slide">
+								<div class="viewed__slide-img viewed__slide-ibg">
+									<picture><source srcset="img/recently-viewed/photo-1.webp" type="image/webp"><img src="img/recently-viewed/photo-1.jpg" alt="tours"></picture>
+									<div class="viewed__slide-sale">
+										30%
+									</div>
+									<div class="viewed__slide-block">
+										<div class="viewed__slide-days">
+											10 Days | 09 Night
+										</div>
+										<div class="viewed__slide-info">
+											<div class="viewed__slide-price">
+												$895.50
+											</div>
+											<div class="viewed__slide-links">
+												<button type="button" class="viewed__slide-share"></button>
+												<a href="" class="viewed__slide-link">Explore</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="viewed__slide-body">
+									<h3 class="viewed__slide-title">
+										<a href="">
+											Train Tour Skyline
+										</a>
+									</h3>
+									<p class="viewed__slide-text">
+										Check Out Daily Deals and Promotion on Hotels.
+										Easy & Fast Booking
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__head head-footer">
+					<div class="head-footer__quicklinks">
+						<a href="#" class="head-footer__quicklink">QUICK LINKS</a>
+						<div class="head-footer__quicktext">Explore more categories</div>
+					</div>
+					<div class="head-footer__help">
+						<a href="tel:012345632454" class="head-footer__phone">0123-456-324-54</a>
+						<a href="mailto:hello@entrada.com" class="head-footer__email">hello@entrada.com</a>
+					</div>
+				</div>
+				<div class="footer__top top-footer">
+					<div class="top-footer__left">
+						<div class="top-footer__subtitle">Get in touch</div>
+						<h3 class="top-footer__title">Adventures Calling
+							You Guys!</h3>
+					</div>
+					<div class="top-footer__right">
+						<a href="#" class="top-footer__ouroffice" target="_blank">
+							<div class="top-footer__icon">
+								<img src="img/icons/globus.svg" alt="globus">
+							</div>
+							<div class="top-footer__info">
+								<div class="top-footer__text">
+									Our Offices
+								</div>
+								<div class="top-footer__countries">
+									Nepal, USA, India
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="footer__body">
+					<nav data-spollers="768" class="footer__menu menu-footer">
+						<div class="menu-footer__column">
+							<button type="button" data-spoller class="menu-footer__title">Services</button>
+							<ul class="menu-footer__list">
+								<li class="menu-footer__item"><a href="" class="menu-footer__link">Budget Tours</a></li>
+								<li class="menu-footer__item"><a href="" class="menu-footer__link">Expert Insight</a></li>
+								<li class="menu-footer__item"><a href="" class="menu-footer__link">Independent</a></li>
+								<li class="menu-footer__item"><a href="" class="menu-footer__link">Luxury Tours</a></li>
+								<li class="menu-footer__item"><a href="" class="menu-footer__link">Safety Tips</a></li>
+								<li class="menu-footer__item"><a href="" class="menu-footer__link">Tips n Tricks</a></li>
+							</ul>
+						</div>
+						<div class="menu-footer__column">
+							<button type="button" data-spoller class="menu-footer__title">Adventures</button>
+							<ul class="menu-footer__list">
+								<li class="menu-footer__item"><a href="" class="menu-footer__link">Beach Activity</a></li>
+								<li class="menu-footer__item"><a href="" class="menu-footer__link">Bungee Jump</a></li>
+								<li class="menu-footer__item"><a href="" class="menu-footer__link">City Tour</a></li>
+								<li class="menu-footer__item"><a href="" class="menu-footer__link">Hiking Trips</a></li>
+								<li class="menu-footer__item"><a href="" class="menu-footer__link">Jungle Safari</a></li>
+								<li class="menu-footer__item"><a href="" class="menu-footer__link">Night City Walk</a></li>
+							</ul>
+						</div>
+						<div class="menu-footer__column">
+							<button type="button" data-spoller class="menu-footer__title">Country</button>
+							<ul class="menu-footer__list">
+								<li class="menu-footer__item"><a href="" class="menu-footer__link">USA</a></li>
+								<li class="menu-footer__item"><a href="" class="menu-footer__link">Australia</a></li>
+								<li class="menu-footer__item"><a href="" class="menu-footer__link">South Africa</a></li>
+								<li class="menu-footer__item"><a href="" class="menu-footer__link">West Indies</a></li>
+								<li class="menu-footer__item"><a href="" class="menu-footer__link">New Zealand</a></li>
+								<li class="menu-footer__item"><a href="" class="menu-footer__link">Srilanka</a></li>
+							</ul>
+						</div>
+					</nav>
+					<div class="footer__talk talk-footer">
+						<div class="talk-footer__subtitle">
+							Get In Touch
+						</div>
+						<h4 class="talk-footer__title">
+							Let’s Talk
+						</h4>
+						<form action="#" class="talk-footer__form">
+							<input type="text" name="form[email]" data-required="email" data-validate="email" data-error="Incorrect E-mail entered" placeholder="Enter your email" class="input talk-footer__input">
+							<button type="submit" class="talk-footer__btn">Send Now!</button>
+						</form>
+					</div>
+				</div>
+				<div class="footer__bottom bottom-footer">
+					<div class="bottom-footer__top">
+						<div class="bottom-footer__title">Privacy Policy</div>
+						<div class="bottom-footer__socials">
+							<a href="" class="bottom-footer__link">Linkedin</a>
+							<a href="" class="bottom-footer__link">Facebook</a>
+							<a href="" class="bottom-footer__link">Instagram</a>
+						</div>
+					</div>
+					<div class="bottom-footer__copy">
+						<div class="bottom-footer__text">
+							2016-2021 © Emprise
+						</div>
+						<picture><source srcset="img/payment-logos.webp" type="image/webp"><img class="bottom-footer__img" src="img/payment-logos.png" alt="payment-logos"></picture>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="js/app.min.js?_v=20230318225812"></script>
+</body>
+
+</html>
