@@ -1,6 +1,9 @@
 .swiper {
 	overflow: hidden;
 }
+.swiper-initialized {
+	touch-action: pan-y;
+}
 .swiper-wrapper {
 	width: 100%;
 	height: 100%;

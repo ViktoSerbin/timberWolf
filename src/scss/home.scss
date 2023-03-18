@@ -341,6 +341,7 @@
     // .body-search__calendar
     &__calendar {
         position: relative;
+        left: -5px;
         max-width: rem(150);
         @media (max-width: $tablet) {
             max-width: 100%;
@@ -357,7 +358,7 @@
         }
         input {
             width: 100%;
-            padding: rem(10) rem(35) rem(10) rem(2);
+            padding: rem(10) rem(35) rem(10) rem(5);
             font-size: rem(18);
             line-height: 1.2;
             text-decoration-line: underline;

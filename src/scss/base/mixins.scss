@@ -1,4 +1,4 @@
-//Подключение шрифта
+//Підключення шрифту
 @mixin font($font_name, $file_name, $weight, $style) {
 	@font-face {
 		font-family: $font_name;
@@ -23,7 +23,6 @@
 	$result: math.div($px, $current) + em;
 	@return $result;
 }
-//Адаптивное свойство
 
 //Currency
 @mixin currency($sym) {
@@ -39,8 +38,8 @@
 	grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
 }
 
-// Адаптивное свойство (clamp)
-@mixin adaptiveValue($property, $startSize, $minSize, $widthFrom: $containerWidth, $widthTo: $minWidth, $keepSize: 0) {
+// Адаптивна властивість (clamp)
+@mixin adaptiveValue($property, $startSize, $minSize, $keepSize: 0, $widthFrom: $containerWidth, $widthTo: $minWidth) {
 	@if ($startSize==0) {
 		$startSize: 0.000001;
 	}
@@ -55,11 +54,11 @@
 		$widthFrom: $maxWidth;
 	}
 
-	// Брейк-поинты в EM
+	// Брейк-поїнти в EM
 	$widthFromMedia: em($widthFrom);
 	$widthToMedia: em($widthTo);
 
-	// Формула плавающего значения
+	// Формула плаваючого значення
 	// Источник: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
 	$slope: math.div(($startSize - $minSize), ($widthFrom - $widthTo));
 	$yIntersection: -$widthTo * $slope + $minSize;
@@ -68,31 +67,33 @@
 	}
 	$flyValue: #{rem($yIntersection)}" + " #{$slope * 100}vw;
 
-	// Получение значения свойства
+	// Отримання значення властивості
 	$propertyValue: #{"clamp(" rem($minSize) "," $flyValue "," rem($startSize) ")"};
-	// Если отрицательные значения
+	// Якщо негативні значення
 	@if ($minSize > $startSize) {
 		$propertyValue: #{"clamp(" rem($startSize) "," $flyValue "," rem($minSize) ")"};
 	}
 
-	// Если поддерживается clamp();
-	@supports (#{$property}: $propertyValue) {
-		#{$property}: $propertyValue;
-	}
-	// Если не поддерживается clamp();
-	@supports not (#{$property}: $propertyValue) {
-		#{$property}: calc(#{rem($minSize)} + #{$addSize} * (100vw - #{rem($widthTo)}) / #{math.div($widthFrom, 16) - math.div($widthTo, 16)});
-	}
-
-	// Устанавливаем значения по умолчанию
-	@if $widthFrom != $containerWidth and $widthFrom != $maxWidth and $keepSize != 1 and $keepSize != 2 {
+	// Встановлюємо значення за замовчуванням
+	@if $keepSize != 1 and $keepSize != 3 {
 		@media (min-width: $widthFromMedia) {
-			#{$property}: inherit;
+			#{$property}: rem($startSize);
 		}
 	}
-	@if $widthTo != $minWidth and $keepSize != 1 and $keepSize != 3 {
+	// Адаптуємо розмір у проміжку між зазначеними ширинами в'юпорту
+	@media (min-width: $widthToMedia) and (max-width: $widthFromMedia) {
+		// Якщо підтримується clamp();
+		@supports (#{$property}: $propertyValue) {
+			#{$property}: $propertyValue;
+		}
+		// Якщо не підтримується clamp();
+		@supports not (#{$property}: $propertyValue) {
+			#{$property}: calc(#{rem($minSize)} + #{$addSize} * (100vw - #{rem($widthTo)}) / #{math.div($widthFrom, 16) - math.div($widthTo, 16)});
+		}
+	}
+	@if $keepSize != 1 and $keepSize != 2 {
 		@media (max-width: $widthToMedia) {
-			#{$property}: inherit;
+			#{$property}: rem($minSize);
 		}
 	}
 }

@@ -136,6 +136,7 @@
         // .select__body
         &__body {
             position: relative;
+            left: -5px;
         }
         // .select__title
         &__title {
@@ -148,6 +149,7 @@
             background-color: #fff;
             cursor: pointer;
             width: 100%;
+            padding: 0;
             border-radius: 4px;
         }
         // .select__value
@@ -187,6 +189,7 @@
             width: 100%;
             background-color: transparent;
             height: 100%;
+            padding: 0 rem(5);
         }
         // .select__options
         &__options {
